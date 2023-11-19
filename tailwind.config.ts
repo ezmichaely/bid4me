@@ -1,36 +1,93 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  darkMode: ["class"],
+import type { Config } from 'tailwindcss'
+// import type { nextui } from '@nextui-org/react';
+import { nextui } from "@nextui-org/react";
+
+const config: Config = {
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
+  ],
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
     extend: {
-      keyframes: {
-        "accordion-down": {
-          from: { height: 0 },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: 0 },
-        },
+      backgroundImage: {
+        logoBg: 'url(/brand/LogoBg.svg)',
       },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+      colors: {
+        primary: {
+          100: '#4B48E5',
+          200: '#2B23EC',
+          300: '#2925CC',
+          400: '#260B8E',
+          500: '#02033B',
+        },
+        secondary: {
+          100: '#F7C95F',
+          200: '#FDCD45',
+          300: '#FFC614',
+          400: '#FDB235',
+          500: '#B27822',
+        },
+        accent: '#0F172A',
+        whites: {
+          100: '#F3F8FF',
+          200: '#E7EFFA',
+        }
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  darkMode: "class",
+  plugins: [nextui({
+    light: {
+      // ...
+      colors: {
+        // primary: {
+        //   100: '#4B48E5',
+        //   200: '#2B23EC',
+        //   300: '#2925CC',
+        //   400: '#260B8E',
+        //   500: '#02033B',
+        // },
+        // secondary: {
+        //   100: '#F7C95F',
+        //   200: '#FDCD45',
+        //   300: '#FFC614',
+        //   400: '#FDB235',
+        //   500: '#B27822',
+        // },
+        // accent: '#0F172A',
+        // whites: {
+        //   100: '#F3F8FF',
+        //   200: '#E7EFFA',
+        // }
+      },
+    },
+    dark: {
+      // ...
+      colors: {
+        // primary: {
+        //   100: '#4B48E5',
+        //   200: '#2B23EC',
+        //   300: '#2925CC',
+        //   400: '#260B8E',
+        //   500: '#02033B',
+        // },
+        // secondary: {
+        //   100: '#F7C95F',
+        //   200: '#FDCD45',
+        //   300: '#FFC614',
+        //   400: '#FDB235',
+        //   500: '#B27822',
+        // },
+        // accent: '#0F172A',
+        // whites: {
+        //   100: '#F3F8FF',
+        //   200: '#E7EFFA',
+        // }
+      },
+    },
+    // ... custom themes
+  })],
 }
+export default config
