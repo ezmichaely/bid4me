@@ -1,0 +1,4 @@
+.icon {
+  @apply bg-secondary-300 rounded-full
+  p-2 -ml-3 mr-2
+}

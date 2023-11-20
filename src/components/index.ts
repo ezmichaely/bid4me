@@ -1,21 +1,23 @@
-import Providers from '@/components/shared/Providers'
+import Providers from '@/components/common/Providers';
+import Header from '@/components/common/Header';
+import Footer from '@/components/common/Footer';
+import HeaderLogo from '@/components/common/HeaderLogo';
+import AsideNavigation from '@/components/common/AsideNavigation';
+import MobileNavigation from '@/components/common/MobileNavigation';
 
-
-import Header from '@/components/shared/Header/Header';
-import Footer from '@/components/shared/Footer/Footer';
-import Logo from '@/components/shared/Logo/Logo'
-
-import SearchBar from '@/components/forms/SearchBar/SearchBar'
-import LoginForm from '@/components/forms/LoginForm/LoginForm';
-import RegisterForm from '@/components/forms/RegisterForm/RegisterForm';
+import SearchBar from '@/components/forms/SearchBar';
+import LoginForm from '@/components/forms/LoginForm';
+import RegisterForm from '@/components/forms/RegisterForm';
 
 
 export {
   Providers,
-  Header, Footer, Logo,
+  Header, Footer, HeaderLogo,
+  AsideNavigation, MobileNavigation,
 
   SearchBar,
   LoginForm, RegisterForm,
+
 
 
 

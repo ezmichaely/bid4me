@@ -1,0 +1,35 @@
+.headerLogo {
+  @apply absolute top-0
+  h-[86px] max-w-[305px] min-w-[305px] w-[305px]
+  bg-logoBg
+  mt-px
+
+  -ml-[170px] lg:-ml-px
+  transition-all
+
+  /* border border-red-500 */
+}
+
+.headerLogoContent {
+  @apply h-[86px]
+  pr-[74px] lg:pl-[36px] lg:pr-0
+  /* pl-[36px] */
+  flex
+  justify-end lg:justify-start
+  /* justify-start */
+  items-center gap-4
+  /* border */
+}
+
+/* .headerLogoContent img:first-of-type {
+  @apply opacity-0 lg:opacity-100
+  transition-opacity
+} */
+
+.headerLogoContent img:nth-of-type(2) {
+  @apply
+  hidden lg:inline-flex
+  opacity-0 lg:opacity-100
+  transition-opacity
+
+}

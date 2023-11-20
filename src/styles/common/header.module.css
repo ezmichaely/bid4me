@@ -1,0 +1,86 @@
+.header {
+  @apply w-screen block bg-white
+}
+
+.topContainer {
+  @apply relative h-24 w-full
+}
+
+.logoPlaceholder {
+  @apply relative max-w-screen-2xl mx-auto
+  border
+}
+
+.topBarContainer {
+  @apply min-h-[34px] h-[34px] w-full
+  bg-white flex justify-end
+}
+
+.topBarContent {
+  @apply max-w-screen-2xl mx-auto w-full h-full
+  hidden lg:flex justify-end items-center flex-row gap-8
+  py-2 px-6
+}
+
+.topBarContent a, .topBarContent button {
+  @apply text-accent font-bold hover:text-accent/80
+}
+
+.linkActive {
+  @apply text-primary-300
+}
+
+
+.topBarContainer h3 {
+  @apply w-full px-6
+  lg:hidden flex justify-end xs:justify-center items-center
+  text-accent font-bold
+  py-2
+}
+
+
+.divider {
+  @apply w-[2px] bg-accent;
+}
+
+.searchBarContainer {
+  @apply box-content
+  min-h-[62px] max-h-[62px] h-[62px]
+  w-screen
+  bg-primary-400
+}
+
+.searchBarContent {
+  @apply ease-linear duration-150
+  max-w-screen-2xl mx-auto w-full h-full
+  pl-24 lg:pl-[270px] py-2 pr-6
+  /* pl-[275px] py-2 */
+  flex justify-start items-center flex-row gap-8
+  text-whites-100 font-bold
+  /* border border-red-500 */
+}
+
+.whiteBg {
+  @apply absolute top-0 left-0
+  min-h-[88px] max-h-[88px] h-[88px]
+  bg-white
+  w-[calc((100vw_-_1533px)_/_2)]
+}
+
+.botContainer {
+  @apply transition-height
+  h-2 lg:h-auto
+  bg-secondary-300 w-screen;
+}
+
+.botContent {
+  @apply
+  max-w-screen-2xl mx-auto w-full
+  hidden lg:flex justify-center items-center flex-row gap-28
+ text-accent font-bold
+  py-2
+}
+
+.botContent a {
+  @apply whitespace-nowrap
+}
