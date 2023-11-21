@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { useState } from "react";
 import { signIn } from 'next-auth/react';
-import { BrandSvg, GoogleSvg } from '@/assets/icons'
+import { GoogleSvg } from '@/assets/icons'
 import { colors } from "@/lib/constants";
+import styles from './loginForm.module.css'
 
 
 // import { zodResolver } from "@hookform/resolvers/zod"
@@ -75,7 +76,7 @@ export default function LoginForm() {
 
       <div className="inline-flex">
         <p>Don&apos;t have an account? &nbsp;</p>
-        <Link href="/register"> Register here.</Link>
+        <Link href="/signup"> Register here.</Link>
       </div>
     </>
 
