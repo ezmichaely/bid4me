@@ -4,12 +4,16 @@
   bg-logoBg
   mt-px -ml-[170px] lg:-ml-px
   transition-all
+
+  /* border border-black */
 }
 
 .headerLogoContent {
-  @apply h-[86px]
+  @apply h-[86px] w-full
   pr-[74px] lg:pl-4 lg:pr-0
+
   flex justify-end lg:justify-start
   items-center gap-4
 
+  /* border border-red-500 */
 }

@@ -7,32 +7,10 @@ import { FacebookSvg, GoogleSvg, CheckBoxSvg } from '@/assets/icons'
 import { colors } from "@/lib/constants";
 import { Input, Checkbox } from "@nextui-org/react";
 import { AtSign, KeyRound, Eye, EyeOff, Check } from "lucide-react";
-import styles from './loginForm.module.css'
+import styles from './signupForm.module.css'
 
 
-// import { zodResolver } from "@hookform/resolvers/zod"
-// import { useForm } from "react-hook-form"
-// import * as z from "zod"
-// import { Button } from "@/components/ui/button"
-// import {
-//   Form,
-//   FormControl,
-//   FormDescription,
-//   FormField,
-//   FormItem,
-//   FormLabel,
-//   FormMessage,
-// } from "@/components/ui/form"
-// import { Input } from "@/components/ui/input"
-
-
-// const formSchema = z.object({
-//   username: z.string().min(2, {
-//     message: "Username must be at least 2 characters.",
-//   }),
-// })
-
-export default function LoginForm() {
+export default function SignupForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loginInProgress, setLoginInProgress] = useState(false);
@@ -42,25 +20,17 @@ export default function LoginForm() {
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => setIsVisible(!isVisible);
 
-  // const handleFormSubmit = async (ev) => {
-  //   ev.preventDefault();
-  //   setLoginInProgress(true);
-  //   await signIn('credentials', { email, password, callbackUrl: '/' })
-
-  //   // setLoginInProgress(false );
-  // }
-
   return (
     <div className={styles.container}>
       {/* onSubmit={handleFormSubmit}  */}
-      <h3>LOGIN</h3>
+      <h3>REGISTER</h3>
 
       <form>
         <div className={styles.div01}>
           <button
             onClick={() => signIn('google', { callbackUrl: '/' })}>
             <GoogleSvg size={20} />
-            Login with Google
+            Register using Google
           </button>
         </div>
 
@@ -68,13 +38,13 @@ export default function LoginForm() {
           <button
             onClick={() => signIn('facebook', { callbackUrl: '/' })}>
             <FacebookSvg size={20} />
-            Login with Facebook
+            Register using Facebook
           </button>
         </div>
 
         <div className={styles.div03}>
           <div />
-          <p> or Login with Credentials </p>
+          <p> or Register with Credentials </p>
           <div />
         </div>
 
@@ -123,31 +93,42 @@ export default function LoginForm() {
           />
         </div>
 
-        <div className={styles.div05}>
-          <Checkbox defaultSelected={false}
-            size="md"
-            // icon={<CheckBoxSvg fill={colors.secondary} />}
+        <div className={styles.div04}>
+          <Input
+            type={isVisible ? "text" : "password"}
+            label="Retype Password"
+            labelPlacement="outside"
+            placeholder="Retype your password"
+            size="lg"
+            isInvalid={false}
+            errorMessage={error}
+            startContent={
+              <KeyRound size={20} color={colors.primary} />
+            }
+            endContent={
+              <button className="focus:outline-none" type="button" onClick={toggleVisibility}>
+                {isVisible ? (
+                  <EyeOff className="text-2xl text-default-400 pointer-events-none" />
+                ) : (
+                  <Eye className="text-2xl text-default-400 pointer-events-none" />
+                )}
+              </button>
+            }
             classNames={{
-              icon: "text-secondary-300",
-              wrapper: "after:bg-primary-400",
-              label: "font-medium"
+              label: "font-medium",
             }}
-          >
-            Keep me logged in.
-          </Checkbox>
-
-          <Link href="/forgotpassword">Forgot Password?</Link>
+          />
         </div>
 
         <button type="submit" disabled={loginInProgress}
           className={styles.btnSubmit}>
-          LOGIN
+          SIGNUP
         </button>
       </form>
 
       <div className={styles.formFooter}>
-        <p>Don&apos;t have an account? &nbsp;</p>
-        <Link href="/signup"> Register here.</Link>
+        <p>Already have an account? &nbsp;</p>
+        <Link href="/login"> Login here.</Link>
       </div>
 
     </div>

@@ -10,7 +10,7 @@ import NotificationBell from '@/components/common/notification/NotificationBell'
 
 import SearchBar from '@/components/forms/SearchBar';
 import LoginForm from '@/components/forms/login/LoginForm';
-import RegisterForm from '@/components/forms/register/RegisterForm';
+import SignupForm from '@/components/forms/signup/SignupForm';
 
 
 export {
@@ -20,7 +20,7 @@ export {
   NotificationBell,
 
   SearchBar,
-  LoginForm, RegisterForm,
+  LoginForm, SignupForm,
 
 
 

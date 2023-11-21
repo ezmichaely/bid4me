@@ -39,15 +39,26 @@
   }
 } */
 
+*, *::after, *::before {
+  @apply box-border
+}
+
 body {
   @apply overflow-x-hidden w-screen
-  text-accent bg-white font-inter;
+  text-accent font-inter h-screen
+  bg-whites-100
+  /* border border-red-500 */
 }
 
 main {
-  @apply max-w-screen-2xl mx-auto px-3;
+  @apply max-w-screen-2xl mx-auto w-screen
+  min-h-[calc(100vh_-_138px)]
+  pt-10 px-3
+  /* border border-red-500 */
 }
 
 a, button {
-  @apply font-medium
+  @apply
+  /* font-medium */
+  flex justify-center items-center gap-2
 }

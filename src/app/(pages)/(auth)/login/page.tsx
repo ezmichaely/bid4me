@@ -1,5 +1,8 @@
+import { Authentication } from '@/assets/images'
 import { LoginForm } from '@/components'
 import type { Metadata } from 'next'
+import Image from 'next/image'
+import styles from './login.module.css'
 
 export const metadata: Metadata = {
   title: 'Login | Bid 4 Me',
@@ -9,8 +12,16 @@ export const metadata: Metadata = {
 export default function LoginPage() {
   return (
     <main>
-      login page
-      <LoginForm />
+      <section className={styles.section}>
+        <div className={styles.content}>
+          <div className={styles.rightContent}>
+            <Image src={Authentication} alt="auth" />
+          </div>
+          <div className={styles.leftContent}>
+            <LoginForm />
+          </div>
+        </div>
+      </section>
     </main>
   )
 }

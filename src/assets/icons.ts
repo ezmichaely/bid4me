@@ -1,6 +1,10 @@
-import GoogleSvg from "./icons/GoogleSvg";
 import BrandSvg from "./icons/BrandSvg";
+import GoogleSvg from "./icons/GoogleSvg";
+import FacebookSvg from "./icons/FacebookSvg";
+import CheckBoxSvg from "./icons/CheckBoxSvg";
 
 export {
-  GoogleSvg, BrandSvg
+  BrandSvg,
+  GoogleSvg, FacebookSvg,
+  CheckBoxSvg,
 }

@@ -37,8 +37,10 @@ const config: Config = {
         },
         accent: '#0F172A',
         whites: {
-          100: '#F3F8FF',
-          200: '#E7EFFA',
+          100: '#F6F6F6',
+          200: '#F3F8FF',
+          300: '#E7EFFA',
+          400: '#D9D9D9'
         }
       },
     },
