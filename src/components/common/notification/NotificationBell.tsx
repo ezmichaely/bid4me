@@ -5,7 +5,7 @@ import { Bell } from 'lucide-react';
 import { Badge } from "@nextui-org/react";
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
-import styles from '@/styles/common/header.module.css';
+import styles from './notificationBell.module.css';
 
 export default function NotificationBell() {
   const path = usePathname();

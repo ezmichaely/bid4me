@@ -6,10 +6,11 @@ import { usePathname } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import { useEffect } from 'react';
 import { useMediaQuery } from '@/lib/utils'
-import styles from '@/styles/common/mobileNavigation.module.css'
+import styles from './mobileNavigation.module.css'
 import { colors } from '@/lib/constants';
 import { BrandName } from '@/components';
 import { BrandIcon } from '@/assets/images';
+import { BrandSvg } from '@/assets/icons';
 import {
   Menu, X, Zap, Gavel,
   Shell, DatabaseZap, Truck,
@@ -81,7 +82,8 @@ export default function AsideNavigation() {
               <ModalHeader className='py-2 w-full flex justify-center'>
                 <Link href="/" onClick={onClose}
                   className='w-fit flex justify-center items-center gap-3' >
-                  <Image src={BrandIcon} alt="brand icon" />
+                  <BrandSvg />
+                  {/* <Image src={BrandIcon} alt="brand icon" /> */}
                   <BrandName size="small" />
                 </Link>
               </ModalHeader>

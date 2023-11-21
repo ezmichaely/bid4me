@@ -1,16 +1,16 @@
 import Providers from '@/components/common/Providers';
-import BrandName from '@/components/common/BrandName';
-import Header from '@/components/common/Header';
-import Footer from '@/components/common/Footer';
-import HeaderLogo from '@/components/common/HeaderLogo';
-import HeaderAvatar from '@/components/common/HeaderAvatar';
-import AsideNavigation from '@/components/common/AsideNavigation';
-import MobileNavigation from '@/components/common/MobileNavigation';
-import NotificationBell from '@/components/common/NotificationBell';
+import BrandName from '@/components/common/brand/BrandName';
+import Header from '@/components/common/header/Header';
+import Footer from '@/components/common/footer/Footer';
+import HeaderLogo from '@/components/common/brand/HeaderLogo';
+import HeaderAvatar from '@/components/common/avatar/HeaderAvatar';
+import AsideNavigation from '@/components/common/aside/AsideNavigation';
+import MobileNavigation from '@/components/common/navigation/MobileNavigation';
+import NotificationBell from '@/components/common/notification/NotificationBell';
 
 import SearchBar from '@/components/forms/SearchBar';
-import LoginForm from '@/components/forms/LoginForm';
-import RegisterForm from '@/components/forms/RegisterForm';
+import LoginForm from '@/components/forms/login/LoginForm';
+import RegisterForm from '@/components/forms/register/RegisterForm';
 
 
 export {

@@ -103,11 +103,11 @@
 
 
 .link, .button {
-  @apply text-accent hover:text-accent/80 whitespace-nowrap
+  @apply font-kanit font-medium text-accent hover:text-accent/80 whitespace-nowrap
   flex justify-center items-center flex-row gap-2 py-2
 }
 
 .linkActive {
-  @apply text-primary-300 hover:text-accent/80
+  @apply font-kanit font-medium text-primary-300 hover:text-accent/80
   flex justify-center items-center flex-row gap-2 py-2
 }

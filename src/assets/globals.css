@@ -49,5 +49,5 @@ main {
 }
 
 a, button {
-  @apply font-kanit font-medium
+  @apply font-medium
 }

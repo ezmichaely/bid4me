@@ -26,14 +26,6 @@
   @apply text-accent hover:text-accent/80
 }
 
-.link, .button {
-  @apply text-accent hover:text-accent/80 whitespace-nowrap
-}
-
-.linkActive {
-  @apply text-primary-300 hover:text-accent/80
-}
-
 .searchBarContainer {
   @apply box-content
   min-h-[62px] max-h-[62px] h-[62px]
@@ -73,4 +65,12 @@
 
 .botContent a {
   @apply whitespace-nowrap flex gap-2
+}
+
+.link, .button {
+  @apply font-kanit font-medium text-accent hover:text-accent/80 whitespace-nowrap
+}
+
+.linkActive {
+  @apply font-kanit font-medium text-primary-300 hover:text-accent/80
 }

@@ -1,0 +1,7 @@
+.link, .button {
+  @apply font-kanit font-medium text-accent hover:text-accent/80 whitespace-nowrap
+}
+
+.linkActive {
+  @apply font-kanit font-medium text-primary-300 hover:text-accent/80
+}
