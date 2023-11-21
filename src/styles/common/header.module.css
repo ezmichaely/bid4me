@@ -22,25 +22,16 @@
   py-2 px-6
 }
 
-.topBarContent a, .topBarContent button {
-  @apply text-accent font-bold hover:text-accent/80
+.topBarContent button {
+  @apply text-accent hover:text-accent/80
+}
+
+.link, .button {
+  @apply text-accent hover:text-accent/80 whitespace-nowrap
 }
 
 .linkActive {
-  @apply text-primary-300
-}
-
-
-.topBarContainer h3 {
-  @apply w-full px-6
-  lg:hidden flex justify-end xs:justify-center items-center
-  text-accent font-bold
-  py-2
-}
-
-
-.divider {
-  @apply w-[2px] bg-accent;
+  @apply text-primary-300 hover:text-accent/80
 }
 
 .searchBarContainer {
@@ -54,9 +45,9 @@
   @apply ease-linear duration-150
   max-w-screen-2xl mx-auto w-full h-full
   pl-24 lg:pl-[270px] py-2 pr-6
-  /* pl-[275px] py-2 */
-  flex justify-start items-center flex-row gap-8
-  text-whites-100 font-bold
+  flex justify-start items-center flex-row gap-2 lg:gap-6
+  /* text-whites-100 font-bold */
+
   /* border border-red-500 */
 }
 
@@ -76,11 +67,14 @@
 .botContent {
   @apply
   max-w-screen-2xl mx-auto w-full
-  hidden lg:flex justify-center items-center flex-row gap-28
+  hidden lg:flex justify-center items-center
+  flex-row gap-20 xl:gap-28
  text-accent font-bold
   py-2
+
+  /* border border-red-500 */
 }
 
 .botContent a {
-  @apply whitespace-nowrap
+  @apply whitespace-nowrap flex gap-2
 }

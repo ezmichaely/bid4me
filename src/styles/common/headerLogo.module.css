@@ -12,12 +12,12 @@
 
 .headerLogoContent {
   @apply h-[86px]
-  pr-[74px] lg:pl-[36px] lg:pr-0
-  /* pl-[36px] */
+  pr-[74px] lg:pl-4 lg:pr-0
   flex
   justify-end lg:justify-start
-  /* justify-start */
   items-center gap-4
+  /* justify-start */
+  /* pl-[36px] */
   /* border */
 }
 
@@ -26,10 +26,20 @@
   transition-opacity
 } */
 
-.headerLogoContent img:nth-of-type(2) {
+/* .headerLogoContent img:nth-of-type(2),
+.headerLogoContent h1 {
   @apply
   hidden lg:inline-flex
   opacity-0 lg:opacity-100
   transition-opacity
+} */
 
+/* .headerLogoContent h1 {
+  @apply text-4xl font-bold
 }
+
+.headerLogoContent h1 span {
+  @apply text-primary-300
+  font-extrabold italic  text-[50px] leading-none
+  skew-y-[15deg] -mt-[6px] px-[3px]
+} */

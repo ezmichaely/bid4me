@@ -1,7 +1,9 @@
 import Providers from '@/components/common/Providers';
+import BrandName from './common/BrandName';
 import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
 import HeaderLogo from '@/components/common/HeaderLogo';
+import HeaderAvatar from './common/HeaderAvatar';
 import AsideNavigation from '@/components/common/AsideNavigation';
 import MobileNavigation from '@/components/common/MobileNavigation';
 
@@ -11,8 +13,8 @@ import RegisterForm from '@/components/forms/RegisterForm';
 
 
 export {
-  Providers,
-  Header, Footer, HeaderLogo,
+  Providers, BrandName,
+  Header, Footer, HeaderLogo, HeaderAvatar,
   AsideNavigation, MobileNavigation,
 
   SearchBar,

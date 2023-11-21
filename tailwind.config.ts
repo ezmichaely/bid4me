@@ -15,6 +15,7 @@ const config: Config = {
       },
       fontFamily: {
         inter: ['var(--font-inter)'],
+        kanit: ['var(--font-kanit)'],
       },
       backgroundImage: {
         logoBg: 'url(/brand/LogoBg.svg)',
@@ -44,20 +45,30 @@ const config: Config = {
   },
   darkMode: "class",
   plugins: [nextui({
-    light: {
-      colors: {
-        primary: '#260B8E',
-        secondary: '#FFC614',
-        // accent: '#0F172A',
+    prefix: "nextui",
+    addCommonColors: true,
+    defaultTheme: "light",
+    defaultExtendTheme: "light",
+    themes: {
+      mamba: {
+        colors: {
+          primary: '#260B8E',
+          secondary: '#FFC614',
+        },
       },
-    },
-    dark: {
-      colors: {
-        primary: '#260B8E',
-        secondary: '#FFC614',
-        // accent: '#0F172A',
+      light: {
+        colors: {
+          primary: '#260B8E',
+          secondary: '#FFC614',
+        },
       },
-    },
+      dark: {
+        colors: {
+          primary: '#260B8E',
+          secondary: '#FFC614',
+        },
+      },
+    }
   })],
 }
 export default config
