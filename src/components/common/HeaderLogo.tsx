@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { BrandIcon, BrandLogo, LogoBg } from "@/assets/images"
+import { BrandIcon } from "@/assets/images"
 import styles from '@/styles/common/headerLogo.module.css'
 import { BrandName } from "@/components"
 

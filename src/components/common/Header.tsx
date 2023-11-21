@@ -1,32 +1,26 @@
 "use client"
+
 import Link from 'next/link'
+import { Divider } from "@nextui-org/react";
+import { signOut, useSession } from 'next-auth/react';
+import { usePathname } from 'next/navigation';
+import styles from '@/styles/common/header.module.css';
+import { colors } from '@/lib/constants';
 import {
   HeaderLogo, SearchBar,
   BrandName, HeaderAvatar,
   MobileNavigation, NotificationBell
 } from '@/components'
 import {
-  Divider, Badge, Avatar,
-} from "@nextui-org/react";
-// import { Badge } from "@nextui-org/react";
-// import { Divider } from "@nextui-org/divider";
-import {
   ShoppingCart, Zap, Gavel,
   Shell, DatabaseZap, Truck,
 } from 'lucide-react';
-import styles from '@/styles/common/header.module.css';
-import { colors } from '@/lib/constants';
-import { useState } from 'react';
-import { signOut, useSession } from 'next-auth/react';
-import { usePathname } from 'next/navigation';
 
 
 export default function Header() {
   const path = usePathname();
   const session = useSession();
   const status = session.status;
-
-  const [isInvisible, setIsInvisible] = useState(false);
 
   return (
     <>
@@ -73,13 +67,14 @@ export default function Header() {
             <div className='relative w-full lg:hidden flex justify-end xs:justify-center py-2 px-6 gap-4 xs:gap-0'>
               <BrandName size='small' />
 
-              {/* {status === 'authenticated' && (
-                <></>
-              )} */}
-              <Divider orientation={'vertical'} className='xs:hidden w-[2px] bg-accent' />
-              <div className='xs:absolute right-1 xs:mr-6 '>
-                <NotificationBell />
-              </div>
+              {status === 'authenticated' && (
+                <>
+                  <Divider orientation={'vertical'} className='xs:hidden w-[2px] bg-accent' />
+                  <div className='xs:absolute right-1 xs:mr-4'>
+                    <NotificationBell />
+                  </div>
+                </>
+              )}
             </div>
           </div>
 
@@ -98,11 +93,9 @@ export default function Header() {
 
               <MobileNavigation />
 
-              {/* {status === 'authenticated' && (
-                <></>
-              )} */}
-
-              <HeaderAvatar />
+              {status === 'authenticated' && (
+                <HeaderAvatar />
+              )}
 
             </div>
           </div>

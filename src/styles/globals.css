@@ -42,14 +42,10 @@
 body {
   @apply overflow-x-hidden w-screen
   text-accent bg-white font-inter;
+}
 
-  /* color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb)); */
+main {
+  @apply max-w-screen-2xl mx-auto px-3;
 }
 
 a, button {

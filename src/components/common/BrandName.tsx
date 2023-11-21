@@ -1,4 +1,7 @@
-import { BrandNameProps, BrandNameSizeClassesProps } from '@/lib/interface';
+import {
+  BrandNameProps,
+  BrandNameSizeClassesProps
+} from '@/lib/interface';
 
 export default function BrandName({ size }: BrandNameProps) {
   function getSize(size: 'main' | 'small'): BrandNameSizeClassesProps {

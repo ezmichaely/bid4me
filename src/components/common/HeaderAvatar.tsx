@@ -1,11 +1,14 @@
 "use client"
-import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, User } from "@nextui-org/react";
-import { colors } from "@/lib/constants";
-import { ChevronDown } from 'lucide-react';
+
+
+import {
+  Dropdown, DropdownTrigger,
+  DropdownMenu, DropdownItem,
+  User
+} from "@nextui-org/react";
 import { signOut } from "next-auth/react";
 
 export default function HeaderAvatar() {
-
 
   return (
     <Dropdown placement="bottom-end">
@@ -20,11 +23,13 @@ export default function HeaderAvatar() {
           isFocusable={true}
           className="transition-transform"
           description=""
-          name={(<ChevronDown color={colors.white} strokeWidth={2} size={24} />)}
+          name=""
+          // name={(<ChevronDown color={colors.white} strokeWidth={2} size={24} />)}
           classNames={{
-            base: 'gap-1 bg-primary-500 py-1 px-2 hover:bg-primary-500/70',
+            // base: 'gap-1 bg-primary-500 py-1 px-2 hover:bg-primary-500/70',
+            base: 'gap-0',
             wrapper: '',
-            name: '',
+            name: 'hidden',
             description: 'hidden'
           }}
         />

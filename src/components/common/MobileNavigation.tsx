@@ -2,28 +2,23 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import {
-  Menu, X,
-  ShoppingCart, Zap, Gavel,
-  Shell, DatabaseZap, Truck,
-} from 'lucide-react';
 import { usePathname } from 'next/navigation';
-import { signOut, useSession } from 'next-auth/react';
-import { useState, useEffect } from 'react';
+import { useSession } from 'next-auth/react';
+import { useEffect } from 'react';
 import { useMediaQuery } from '@/lib/utils'
 import styles from '@/styles/common/mobileNavigation.module.css'
 import { colors } from '@/lib/constants';
+import { BrandName } from '@/components';
+import { BrandIcon } from '@/assets/images';
 import {
-  BrandName,
-  NotificationBell, HeaderAvatar,
-} from '@/components';
+  Menu, X, Zap, Gavel,
+  Shell, DatabaseZap, Truck,
+} from 'lucide-react';
 import {
   Modal, ModalContent, ModalHeader,
-  ModalBody, useDisclosure,
+  ModalBody, ModalFooter, useDisclosure,
   Divider,
-  ModalFooter,
 } from "@nextui-org/react";
-import { BrandIcon } from '@/assets/images';
 
 
 
@@ -34,7 +29,6 @@ export default function AsideNavigation() {
   const mediaQuery = useMediaQuery(1024);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [isInvisible, setIsInvisible] = useState(false);
 
   useEffect(() => {
     if (isOpen && mediaQuery) { onClose(); }
@@ -63,7 +57,7 @@ export default function AsideNavigation() {
 
   return (
     <>
-      <div className="lg:hidden">
+      <div className="lg:hidden flex justify-center">
         <button onClick={onOpen}>
           <Menu size={28} color={colors.secondary} strokeWidth={2} />
         </button>
@@ -76,11 +70,10 @@ export default function AsideNavigation() {
         backdrop="blur"
         placement="top"
         closeButton={(
-          <div className='right-2 border border-red-500'>
+          <div className=''>
             <X size={24} color={colors.primary} strokeWidth={3} />
           </div>
         )}
-
       >
         <ModalContent>
           {(onClose) => (
@@ -92,32 +85,27 @@ export default function AsideNavigation() {
                   <BrandName size="small" />
                 </Link>
               </ModalHeader>
+
               <Divider className='h-[2px] bg-primary-300' />
 
               <ModalBody className=' mb-0'>
-                <div className=''>
-                  <div className='w-full flex justify-around items-center flex-wrap'>
-                    <Link href="/login" onClick={onClose}
-                      className={`${path === '/login' ? `${styles.linkActive}` : `${styles.link}`}`}>
-                      LOGIN
-                    </Link>
-                    <Link href="/signup" onClick={onClose}
-                      className={`${path === '/signup' ? `${styles.linkActive}` : `${styles.link}`}`}>
-                      SIGN UP
-                    </Link>
-                  </div>
-
-                  {/* <div className='w-full flex justify-around items-center flex-wrap'>
-                    <div onClick={onClose}>
-                      <NotificationBell />
+                {status === 'unauthenticated' && (
+                  <>
+                    <div className='w-full flex justify-around items-center flex-wrap'>
+                      <Link href="/login" onClick={onClose}
+                        className={`${path === '/login' ? `${styles.linkActive}` : `${styles.link}`}`}>
+                        LOGIN
+                      </Link>
+                      <Link href="/signup" onClick={onClose}
+                        className={`${path === '/signup' ? `${styles.linkActive}` : `${styles.link}`}`}>
+                        SIGN UP
+                      </Link>
                     </div>
-                    <HeaderAvatar />
-                  </div> */}
-                </div>
+                    <Divider className='h-[2px] bg-secondary-300 my-0 py-0' />
+                  </>
+                )}
 
-
-                <Divider className='h-[2px] bg-secondary-300 ' />
-                <div className='w-full flex justify-center items-center flex-col gap-5 '>
+                <div className='w-full flex justify-center items-center flex-col gap-5'>
                   <Link href="/flashsales" onClick={onClose}
                     className={`${path === '/flashsales' ? `${styles.linkActive}` : `${styles.link}`}`}>
                     <Zap /> FLASH SALES

@@ -8,8 +8,9 @@ export const metadata: Metadata = {
 
 export default function LoginPage() {
   return (
-    <div>
+    <main>
+      login page
       <LoginForm />
-    </div>
+    </main>
   )
 }
