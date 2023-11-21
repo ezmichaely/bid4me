@@ -13,11 +13,15 @@ import { useState, useEffect } from 'react';
 import { useMediaQuery } from '@/lib/utils'
 import styles from '@/styles/common/mobileNavigation.module.css'
 import { colors } from '@/lib/constants';
-import { BrandName, NotificationBell } from '@/components';
+import {
+  BrandName,
+  NotificationBell, HeaderAvatar,
+} from '@/components';
 import {
   Modal, ModalContent, ModalHeader,
   ModalBody, useDisclosure,
   Divider,
+  ModalFooter,
 } from "@nextui-org/react";
 import { BrandIcon } from '@/assets/images';
 
@@ -90,38 +94,30 @@ export default function AsideNavigation() {
               </ModalHeader>
               <Divider className='h-[2px] bg-primary-300' />
 
-              <ModalBody className='space-y-2'>
-                <div className='w-full flex justify-around items-center flex-wrap'>
-                  <Link href="/download" onClick={onClose}
-                    className={`${path === '/download' ? `${styles.linkActive}` : `${styles.link}`}`}>
-                    DOWNLOAD APP
-                  </Link>
-                  <Link href="/becomeaseller" onClick={onClose}
-                    className={`${path === '/becomeaseller' ? `${styles.linkActive}` : `${styles.link}`}`}>
-                    BECOME A SELLER
-                  </Link>
-                </div>
-
-                <div className='w-full flex justify-around items-center flex-wrap'>
-                  <Link href="/login" onClick={onClose}
-                    className={`${path === '/login' ? `${styles.linkActive}` : `${styles.link}`}`}>
-                    LOGIN
-                  </Link>
-                  <Link href="/signup" onClick={onClose}
-                    className={`${path === '/signup' ? `${styles.linkActive}` : `${styles.link}`}`}>
-                    SIGN UP
-                  </Link>
-                </div>
-
-                <div className='w-full flex justify-around items-center flex-wrap py-2'>
-                  <div onClick={onClose}>
-                    <NotificationBell />
+              <ModalBody className=' mb-0'>
+                <div className=''>
+                  <div className='w-full flex justify-around items-center flex-wrap'>
+                    <Link href="/login" onClick={onClose}
+                      className={`${path === '/login' ? `${styles.linkActive}` : `${styles.link}`}`}>
+                      LOGIN
+                    </Link>
+                    <Link href="/signup" onClick={onClose}
+                      className={`${path === '/signup' ? `${styles.linkActive}` : `${styles.link}`}`}>
+                      SIGN UP
+                    </Link>
                   </div>
-                  <button onClick={() => signOut()}>LOGOUT</button>
+
+                  {/* <div className='w-full flex justify-around items-center flex-wrap'>
+                    <div onClick={onClose}>
+                      <NotificationBell />
+                    </div>
+                    <HeaderAvatar />
+                  </div> */}
                 </div>
 
-                <Divider />
-                <div className='w-full flex justify-center items-center flex-col gap-5'>
+
+                <Divider className='h-[2px] bg-secondary-300 ' />
+                <div className='w-full flex justify-center items-center flex-col gap-5 '>
                   <Link href="/flashsales" onClick={onClose}
                     className={`${path === '/flashsales' ? `${styles.linkActive}` : `${styles.link}`}`}>
                     <Zap /> FLASH SALES
@@ -144,12 +140,26 @@ export default function AsideNavigation() {
                   </Link>
                 </div>
 
-
               </ModalBody>
+
+              <Divider className='h-[2px] bg-primary-300' />
+
+              <ModalFooter className='py-0 my-0 bg-secondary-100'>
+                <div className='w-full flex justify-around items-center flex-wrap '>
+                  <Link href="/download" onClick={onClose}
+                    className={`${path === '/download' ? `${styles.linkActive}` : `${styles.link}`}`}>
+                    DOWNLOAD APP
+                  </Link>
+                  <Link href="/becomeaseller" onClick={onClose}
+                    className={`${path === '/becomeaseller' ? `${styles.linkActive}` : `${styles.link}`}`}>
+                    BECOME A SELLER
+                  </Link>
+                </div>
+              </ModalFooter>
             </>
           )}
-        </ModalContent>
-      </Modal>
+        </ModalContent >
+      </Modal >
     </>
   )
 }

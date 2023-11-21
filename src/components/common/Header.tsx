@@ -6,7 +6,7 @@ import {
   MobileNavigation, NotificationBell
 } from '@/components'
 import {
-  Divider, Badge,
+  Divider, Badge, Avatar,
 } from "@nextui-org/react";
 // import { Badge } from "@nextui-org/react";
 // import { Divider } from "@nextui-org/divider";
@@ -70,10 +70,17 @@ export default function Header() {
               )}
             </div>
 
-            <div className='w-full lg:hidden flex justify-end xs:justify-center py-2 px-6'>
+            <div className='relative w-full lg:hidden flex justify-end xs:justify-center py-2 px-6 gap-4 xs:gap-0'>
               <BrandName size='small' />
-            </div>
 
+              {/* {status === 'authenticated' && (
+                <></>
+              )} */}
+              <Divider orientation={'vertical'} className='xs:hidden w-[2px] bg-accent' />
+              <div className='xs:absolute right-1 xs:mr-6 '>
+                <NotificationBell />
+              </div>
+            </div>
           </div>
 
           {/* MIDDLE WHITE BG */}
@@ -89,12 +96,14 @@ export default function Header() {
                   strokeWidth={2} className='hidden lg:block' />
               </Link>
 
+              <MobileNavigation />
+
               {/* {status === 'authenticated' && (
                 <></>
               )} */}
+
               <HeaderAvatar />
 
-              <MobileNavigation />
             </div>
           </div>
         </div>
