@@ -1,5 +1,5 @@
 "use client"
-import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Avatar, User } from "@nextui-org/react";
+import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, User } from "@nextui-org/react";
 import { colors } from "@/lib/constants";
 import { ChevronDown } from 'lucide-react';
 import { signOut } from "next-auth/react";

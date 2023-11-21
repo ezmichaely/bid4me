@@ -1,0 +1,113 @@
+.navDialog {
+  @apply lg:hidden
+  select-none
+}
+
+.navOpen {
+  @apply
+  py-[1px] px-1 border-2 border-transparent rounded-lg
+  flex justify-center items-center
+}
+
+.overlay {
+  @apply
+  fixed
+  top-0
+  left-0
+  bg-whites-100
+  min-h-[450px]
+  h-screen
+  w-screen
+  z-30
+  border border-transparent
+}
+
+.inner {
+  @apply
+  h-screen
+  w-screen
+  flex
+  justify-start
+  items-center
+  flex-col
+  bg-whites-100
+}
+
+
+.toggleDiv {
+  @apply
+  py-3
+  px-6
+  /* h-header  */
+  w-screen
+  flex justify-end items-center flex-row
+}
+
+
+.toggleBtn {
+  @apply
+  p-3 border-2 border-secondary-300 rounded-full
+  flex justify-end items-center
+}
+
+.toggleIcon {
+  @apply text-secondary-300 text-2xl font-bold;
+}
+
+.navbar {
+  @apply
+  min-h-[350px]
+  h-[calc(100vh_-_100px)]
+  w-full
+  flex justify-center items-center flex-col
+  gap-12
+}
+
+.navLink {
+  @apply
+  w-full
+  text-[24px]
+  text-center
+   text-white
+  hover:font-bold
+}
+
+.navLinkActive {
+  @apply
+  w-full
+  text-[24px]
+  text-center text-white
+  font-bold hover:font-bold;
+}
+
+.navLinkBtnActive {
+  @apply
+  text-xl font-inter font-bold
+  px-6 py-2 rounded-full
+  border-2 border-transparent
+  drop-shadow-lg
+  bg-white text-whites-100
+  hover:border-white
+  hover:bg-transparent hover:text-white;
+}
+
+.navLinkBtn {
+  @apply
+  text-xl font-inter font-bold
+  px-6 py-2
+  rounded-full
+  border-2 border-white
+   drop-shadow-lg bg-whites-100 text-white
+  hover:border-white hover:bg-white hover:text-whites-100;
+}
+
+
+.link, .button {
+  @apply text-accent hover:text-accent/80 whitespace-nowrap
+  flex justify-center items-center flex-row gap-2 py-2
+}
+
+.linkActive {
+  @apply text-primary-300 hover:text-accent/80
+  flex justify-center items-center flex-row gap-2 py-2
+}

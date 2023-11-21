@@ -1,15 +1,18 @@
 "use client"
 import Link from 'next/link'
-import { HeaderLogo, SearchBar, BrandName, HeaderAvatar } from '@/components'
+import {
+  HeaderLogo, SearchBar,
+  BrandName, HeaderAvatar,
+  MobileNavigation, NotificationBell
+} from '@/components'
 import {
   Divider, Badge,
-  Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure
 } from "@nextui-org/react";
 // import { Badge } from "@nextui-org/react";
 // import { Divider } from "@nextui-org/divider";
 import {
-  ShoppingCart, Bell, Zap, Gavel,
-  Shell, DatabaseZap, Truck, Menu
+  ShoppingCart, Zap, Gavel,
+  Shell, DatabaseZap, Truck,
 } from 'lucide-react';
 import styles from '@/styles/common/header.module.css';
 import { colors } from '@/lib/constants';
@@ -24,15 +27,6 @@ export default function Header() {
   const status = session.status;
 
   const [isInvisible, setIsInvisible] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
-
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
-
-  const handleOpen = () => {
-    // setBackdrop(backdrop)
-    onOpen();
-  }
 
   return (
     <>
@@ -44,10 +38,12 @@ export default function Header() {
           {/* TOP BAR */}
           <div className={styles.topBarContainer}>
             <div className={styles.topBarContent}>
-              <Link href="/download" className={`${path === '/download' ? `${styles.linkActive}` : `${styles.link}`}`}>
+              <Link href="/download"
+                className={`${path === '/download' ? `${styles.linkActive}` : `${styles.link}`}`}>
                 DOWNLOAD APP
               </Link>
-              <Link href="/becomeaseller" className={`${path === '/becomeaseller' ? `${styles.linkActive}` : `${styles.link}`}`}>
+              <Link href="/becomeaseller"
+                className={`${path === '/becomeaseller' ? `${styles.linkActive}` : `${styles.link}`}`}>
                 BECOME A SELLER
               </Link>
 
@@ -55,10 +51,12 @@ export default function Header() {
 
               {status === 'unauthenticated' && (
                 <>
-                  <Link href="/login" className={`${path === '/login' ? `${styles.linkActive}` : `${styles.link}`}`}>
+                  <Link href="/login"
+                    className={`${path === '/login' ? `${styles.linkActive}` : `${styles.link}`}`}>
                     LOGIN
                   </Link>
-                  <Link href="/signup" className={`${path === '/signup' ? `${styles.linkActive}` : `${styles.link}`}`}>
+                  <Link href="/signup"
+                    className={`${path === '/signup' ? `${styles.linkActive}` : `${styles.link}`}`}>
                     SIGN UP
                   </Link>
                 </>
@@ -66,21 +64,15 @@ export default function Header() {
 
               {status === 'authenticated' && (
                 <>
-                  <Badge color="danger" size="sm" content="" shape="circle"
-                    isInvisible={isInvisible} >
-                    <Link href="/notifications"
-                      className={`${path === '/notifications' ? `${styles.linkActive}` : `${styles.link}`}`}>
-                      <Bell className="fill-current" size={20} />
-                    </Link>
-                  </Badge>
+                  <NotificationBell />
                   <button onClick={() => signOut()}>LOGOUT</button>
                 </>
               )}
-
-
             </div>
 
-            <BrandName size='small' />
+            <div className='w-full lg:hidden flex justify-end xs:justify-center py-2 px-6'>
+              <BrandName size='small' />
+            </div>
 
           </div>
 
@@ -97,16 +89,12 @@ export default function Header() {
                   strokeWidth={2} className='hidden lg:block' />
               </Link>
 
-              <button onClick={handleOpen} className='lg:hidden'>
-                <Menu size={28} color={colors.secondary}
-                  strokeWidth={2} />
-              </button>
-
               {/* {status === 'authenticated' && (
                 <></>
               )} */}
               <HeaderAvatar />
 
+              <MobileNavigation />
             </div>
           </div>
         </div>

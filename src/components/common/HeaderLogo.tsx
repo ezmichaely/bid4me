@@ -9,7 +9,9 @@ export default function HeaderLogo() {
     <Link href="/" className={styles.headerLogo}>
       <div className={styles.headerLogoContent}>
         <Image src={BrandIcon} alt="BrandIcon" />
-        <BrandName size="main" />
+        <div className="hidden lg:inline-flex opacity-0 lg:opacity-100 transition-opacity">
+          <BrandName size="main" />
+        </div>
       </div>
     </Link>
   )
