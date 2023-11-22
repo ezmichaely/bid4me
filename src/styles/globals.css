@@ -53,7 +53,7 @@ body {
 main {
   @apply max-w-screen-2xl mx-auto w-screen
   min-h-[calc(100vh_-_138px)]
-  pt-10 px-3
+  pt-3 px-3
   /* border border-red-500 */
 }
 

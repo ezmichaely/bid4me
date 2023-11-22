@@ -3,8 +3,9 @@
 } */
 
 .section {
-  @apply w-full h-full lg:p-8
-
+  @apply w-full h-full
+  pb-3
+  /* lg:p-8 */
 }
 
 .content {
