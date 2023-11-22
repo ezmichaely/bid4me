@@ -93,9 +93,9 @@ export default function Header() {
 
             <MobileNavigation />
 
-            {status === 'authenticated' && (
-              <HeaderAvatar />
-            )}
+            {/* {status === 'authenticated' && ( */}
+            <HeaderAvatar />
+            {/* )} */}
 
           </div>
         </div>
