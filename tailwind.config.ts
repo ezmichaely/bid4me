@@ -19,6 +19,7 @@ const config: Config = {
       },
       backgroundImage: {
         logoBg: 'url(/brand/LogoBg.svg)',
+        auth: 'linear-gradient(180deg, #4B48E5 0%, rgba(157, 103, 234, 0.00) 94.76%)',
       },
       colors: {
         primary: {

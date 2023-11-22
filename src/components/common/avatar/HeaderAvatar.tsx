@@ -16,7 +16,7 @@ export default function HeaderAvatar() {
         <User
           as="button"
           avatarProps={{
-            className: "min-w-[32px] min-h-[32px] w-8 h-8 text-xs border-2 border-white",
+            className: "min-w-[32px] min-h-[32px] w-8 h-8 text-xs border-2 border-secondary-300",
             isBordered: false,
             src: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
           }}

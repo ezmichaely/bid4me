@@ -1,8 +1,9 @@
 
+
 import { Inter, Kanit } from 'next/font/google'
 import { inter, kanit } from '@/assets/fonts';
-import '@/styles/globals.css'
 import { Providers, Header } from "@/components";
+import '@/styles/globals.css'
 
 const interOnline = Inter({ subsets: ['latin'] })
 const kanitOnline = Kanit({

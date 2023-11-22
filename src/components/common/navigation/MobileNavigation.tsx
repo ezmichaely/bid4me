@@ -59,7 +59,7 @@ export default function AsideNavigation() {
   return (
     <>
       <div className="lg:hidden flex justify-center">
-        <button onClick={onOpen}>
+        <button onClick={onOpen} className='-ml-4'>
           <Menu size={28} color={colors.secondary} strokeWidth={2} />
         </button>
       </div>

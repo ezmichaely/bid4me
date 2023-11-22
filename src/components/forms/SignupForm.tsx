@@ -31,18 +31,18 @@ export default function SignupForm() {
           <Button size="lg" type="button" className={styles.btnProvider}
             onClick={() => signIn('google', { callbackUrl: '/' })}>
             <GoogleSvg size={20} />
-            Sign Up with Google
+            Signup with Google
           </Button>
           <Button size="lg" type="button" className={styles.btnProvider}
             onClick={() => signIn('facebook', { callbackUrl: '/' })}>
             <FacebookSvg size={20} />
-            Sign Up with Facebook
+            Signup with Facebook
           </Button>
         </div>
 
         <div className={styles.formDivider}>
           <div />
-          <p> or Sign Up with Credentials </p>
+          <p> or Signup with Credentials </p>
           <div />
         </div>
 

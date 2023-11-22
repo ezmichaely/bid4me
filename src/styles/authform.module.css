@@ -1,3 +1,7 @@
+/* .main {
+  @apply bg-auth
+} */
+
 .section {
   @apply w-full h-full lg:p-8
 
@@ -12,13 +16,15 @@
 
 .rightContent {
   @apply hidden lg:flex justify-center items-center
-  w-1/2
+  w-1/2 grow
+  /* border border-red-500 */
 }
 
 .leftContent {
-  @apply w-full lg:w-1/2 lg:max-w-[50%] max-w-md
+  @apply w-full lg:w-3/5 max-w-md
   flex justify-start items-start
   bg-white p-5 shadow-xl
+  /* border border-red-500 */
 }
 
 .formContainer {

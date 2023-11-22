@@ -1,8 +1,10 @@
+
 import { Authentication } from '@/assets/images'
 import { LoginForm } from '@/components'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import styles from '@/styles/authform.module.css'
+import { useEffect } from 'react'
 
 export const metadata: Metadata = {
   title: 'Login | Bid 4 Me',
@@ -10,8 +12,13 @@ export const metadata: Metadata = {
 }
 
 export default function LoginPage() {
+
+  // useEffect(() => {
+  //   document.body.classList.add('bg-auth');
+  // })
+
   return (
-    <main>
+    <main className={styles.main}>
       <section className={styles.section}>
         <div className={styles.content}>
           <div className={styles.rightContent}>
