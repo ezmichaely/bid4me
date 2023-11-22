@@ -43,38 +43,38 @@ export default function Header() {
 
             <Divider orientation="vertical" className="w-[2px] bg-accent" />
 
-            {status === 'unauthenticated' && (
-              <>
-                <Link href="/login"
-                  className={`${path === '/login' ? `${styles.linkActive}` : `${styles.link}`}`}>
-                  LOGIN
-                </Link>
-                <Link href="/signup"
-                  className={`${path === '/signup' ? `${styles.linkActive}` : `${styles.link}`}`}>
-                  SIGN UP
-                </Link>
-              </>
-            )}
+            {/* {status === 'unauthenticated' && ( */}
+            <>
+              <Link href="/login"
+                className={`${path === '/login' ? `${styles.linkActive}` : `${styles.link}`}`}>
+                LOGIN
+              </Link>
+              <Link href="/signup"
+                className={`${path === '/signup' ? `${styles.linkActive}` : `${styles.link}`}`}>
+                SIGN UP
+              </Link>
+            </>
+            {/* )} */}
 
-            {status === 'authenticated' && (
-              <>
-                <NotificationBell />
-                <button onClick={() => signOut()}>LOGOUT</button>
-              </>
-            )}
+            {/* {status === 'authenticated' && ( */}
+            <>
+              <NotificationBell />
+              <button onClick={() => signOut()} className={styles.link}>LOGOUT</button>
+            </>
+            {/* )} */}
           </div>
 
           <div className='relative w-full lg:hidden flex justify-end xs:justify-center py-2 px-6 gap-4 xs:gap-0'>
             <BrandName size='small' />
 
-            {status === 'authenticated' && (
-              <>
-                <Divider orientation={'vertical'} className='xs:hidden w-[2px] bg-accent' />
-                <div className='xs:absolute right-1 xs:mr-4'>
-                  <NotificationBell />
-                </div>
-              </>
-            )}
+            {/* {status === 'authenticated' && ( */}
+            <>
+              <Divider orientation={'vertical'} className='xs:hidden w-[2px] bg-accent' />
+              <div className='xs:absolute right-1 xs:mr-4'>
+                <NotificationBell />
+              </div>
+            </>
+            {/* )} */}
           </div>
         </div>
 
