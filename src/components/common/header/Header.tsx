@@ -69,8 +69,8 @@ export default function Header() {
 
             {/* {status === 'authenticated' && ( */}
             <>
-              <Divider orientation={'vertical'} className='xs:hidden w-[2px] bg-accent' />
-              <div className='xs:absolute right-1 xs:mr-4'>
+              <Divider orientation={'vertical'} className='block xs:hidden w-[2px] bg-accent' />
+              <div className='block xs:absolute right-1 xs:mr-4'>
                 <NotificationBell />
               </div>
             </>
