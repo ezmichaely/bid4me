@@ -2,7 +2,7 @@ import { Authentication } from '@/assets/images'
 import { LoginForm } from '@/components'
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import styles from './login.module.css'
+import styles from '@/styles/authform.module.css'
 
 export const metadata: Metadata = {
   title: 'Login | Bid 4 Me',

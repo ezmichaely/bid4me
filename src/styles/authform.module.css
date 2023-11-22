@@ -1,0 +1,94 @@
+.section {
+  @apply w-full h-full lg:p-8
+
+}
+
+.content {
+  @apply w-full
+  flex justify-center items-start
+  lg:justify-between lg:items-stretch
+  flex-row gap-10
+}
+
+.rightContent {
+  @apply hidden lg:flex justify-center items-center
+  w-1/2
+}
+
+.leftContent {
+  @apply w-full lg:w-1/2 lg:max-w-[50%] max-w-md
+  flex justify-start items-start
+  bg-white p-5 shadow-xl
+}
+
+.formContainer {
+  @apply w-full
+}
+
+.formTitle {
+  @apply font-semibold font-kanit text-5xl
+}
+
+.formContent {
+  @apply block w-full mt-4
+}
+
+.formProviders {
+  @apply w-full space-y-4
+}
+
+.formCredentials {
+  @apply w-full flex justify-start items-start flex-col gap-4
+}
+
+.formControl {
+  @apply w-full font-medium
+}
+
+.formDivider {
+  @apply flex justify-between items-center flex-row flex-nowrap gap-x-4 py-6
+}
+
+.formDivider div {
+  @apply h-[2px] w-full bg-accent
+}
+
+.formDivider p {
+  @apply whitespace-nowrap text-accent font-medium
+}
+
+.formFooter {
+  @apply w-full flex justify-center items-center flex-row flex-wrap gap-4
+}
+
+.formFooter p {
+  @apply font-medium
+}
+
+.formFooter a {
+  @apply font-bold underline
+  text-primary-400 hover:text-primary-300
+}
+
+.formCheck {
+  @apply w-full flex justify-between items-center flex-row flex-wrap gap-4
+}
+
+.formCheck a {
+  @apply font-bold underline
+  text-primary-400 hover:text-primary-300
+}
+
+.btnProvider {
+  @apply gap-x-2 py-4
+  w-full rounded-xl font-bold
+  bg-whites-300 hover:bg-whites-400
+}
+
+.btnSubmit {
+  @apply mt-6 mb-4 py-3
+  font-bold text-xl tracking-widest
+   rounded-lg w-full
+  bg-primary-400 hover:bg-primary-300 text-secondary-300
+}
+

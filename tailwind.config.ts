@@ -54,20 +54,38 @@ const config: Config = {
     themes: {
       mamba: {
         colors: {
-          primary: '#260B8E',
-          secondary: '#FFC614',
+          primary: {
+            DEFAULT: '#260B8E',
+            foreground: '#ffffff'
+          },
+          secondary: {
+            DEFAULT: '#FFC614',
+            foreground: '#0F172A'
+          },
         },
       },
       light: {
         colors: {
-          primary: '#260B8E',
-          secondary: '#FFC614',
+          primary: {
+            DEFAULT: '#260B8E',
+            foreground: '#ffffff'
+          },
+          secondary: {
+            DEFAULT: '#FFC614',
+            foreground: '#0F172A'
+          },
         },
       },
       dark: {
         colors: {
-          primary: '#260B8E',
-          secondary: '#FFC614',
+          primary: {
+            DEFAULT: '#260B8E',
+            foreground: '#ffffff'
+          },
+          secondary: {
+            DEFAULT: '#FFC614',
+            foreground: '#0F172A'
+          },
         },
       },
     }

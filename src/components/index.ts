@@ -9,8 +9,8 @@ import MobileNavigation from '@/components/common/navigation/MobileNavigation';
 import NotificationBell from '@/components/common/notification/NotificationBell';
 
 import SearchBar from '@/components/forms/SearchBar';
-import LoginForm from '@/components/forms/login/LoginForm';
-import SignupForm from '@/components/forms/signup/SignupForm';
+import LoginForm from '@/components/forms/LoginForm';
+import SignupForm from '@/components/forms/SignupForm';
 
 
 export {
