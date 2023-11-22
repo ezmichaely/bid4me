@@ -148,7 +148,7 @@ export default function LoginForm() {
 
       <div className={styles.formFooter}>
         <p>Don&apos;t have an account? &nbsp;</p>
-        <Link href="/signup"> Register here.</Link>
+        <Link href="/signup">Sign Up here.</Link>
       </div>
 
     </div>

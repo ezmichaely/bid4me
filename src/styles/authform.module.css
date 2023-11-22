@@ -38,7 +38,8 @@
 }
 
 .formCredentials {
-  @apply w-full flex justify-start items-start flex-col gap-4
+  @apply w-full flex justify-start
+  items-start flex-col gap-6
 }
 
 .formControl {
@@ -46,7 +47,8 @@
 }
 
 .formDivider {
-  @apply flex justify-between items-center flex-row flex-nowrap gap-x-4 py-6
+  @apply flex justify-between items-center flex-row
+  flex-nowrap gap-x-4 py-6
 }
 
 .formDivider div {
@@ -58,7 +60,8 @@
 }
 
 .formFooter {
-  @apply w-full flex justify-center items-center flex-row flex-wrap gap-4
+  @apply w-full flex justify-center items-center
+  flex-row flex-wrap gap-4
 }
 
 .formFooter p {
@@ -71,7 +74,9 @@
 }
 
 .formCheck {
-  @apply w-full flex justify-between items-center flex-row flex-wrap gap-4
+  @apply w-full
+  flex justify-between items-center
+  flex-row flex-wrap gap-4
 }
 
 .formCheck a {
