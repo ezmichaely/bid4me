@@ -13,7 +13,7 @@ export default function NotificationBell() {
 
 
   return (
-    <Badge color="danger" size="sm" content="" shape="circle" isInvisible={isInvisible} >
+    <Badge color="danger" size="sm" content="" shape="circle" isInvisible={isInvisible} className='animate-pulse'>
       <Link href="/notifications"
         className={`${path === '/notifications' ? `${styles.linkActive}` : `${styles.link}`}`}>
         <Bell className="fill-current" size={20} />

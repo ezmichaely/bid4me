@@ -8,9 +8,13 @@ import AsideNavigation from '@/components/common/aside/AsideNavigation';
 import MobileNavigation from '@/components/common/navigation/MobileNavigation';
 import NotificationBell from '@/components/common/notification/NotificationBell';
 
+import HeroSwiper from '@/components/common/swiper/HeroSwiper';
+
 import SearchBar from '@/components/forms/SearchBar';
 import LoginForm from '@/components/forms/LoginForm';
 import SignupForm from '@/components/forms/SignupForm';
+
+
 
 
 export {
@@ -19,8 +23,12 @@ export {
   AsideNavigation, MobileNavigation,
   NotificationBell,
 
+  HeroSwiper,
+
   SearchBar,
   LoginForm, SignupForm,
+
+
 
 
 
