@@ -9,7 +9,7 @@ import { colors } from '@/lib/constants';
 import {
   HeaderLogo, SearchBar,
   BrandName, HeaderAvatar,
-  MobileNavigation, NotificationBell
+  MobileNav, NotificationBell
 } from '@/components'
 import {
   ShoppingCart, Zap, Gavel,
@@ -33,11 +33,11 @@ export default function Header() {
         <div className={styles.topBarContainer}>
           <div className={styles.topBarContent}>
             <Link href="/download"
-              className={`${path === '/download' ? `${styles.linkActive}` : `${styles.link}`}`}>
+              className={`navLink ${path === '/download' ? 'active' : ''}`}>
               DOWNLOAD APP
             </Link>
             <Link href="/becomeaseller"
-              className={`${path === '/becomeaseller' ? `${styles.linkActive}` : `${styles.link}`}`}>
+              className={`navLink ${path === '/becomeaseller' ? 'active' : ''}`}>
               BECOME A SELLER
             </Link>
 
@@ -46,11 +46,11 @@ export default function Header() {
             {/* {status === 'unauthenticated' && ( */}
             <>
               <Link href="/login"
-                className={`${path === '/login' ? `${styles.linkActive}` : `${styles.link}`}`}>
+                className={`navLink ${path === '/login' ? 'active' : ''}`}>
                 LOGIN
               </Link>
               <Link href="/signup"
-                className={`${path === '/signup' ? `${styles.linkActive}` : `${styles.link}`}`}>
+                className={`navLink ${path === '/signup' ? 'active' : ''}`}>
                 SIGN UP
               </Link>
             </>
@@ -91,7 +91,7 @@ export default function Header() {
                 strokeWidth={2} className='hidden lg:block' />
             </Link>
 
-            <MobileNavigation />
+            <MobileNav />
 
             {/* {status === 'authenticated' && ( */}
             <HeaderAvatar />
@@ -105,23 +105,23 @@ export default function Header() {
       <div className={styles.botContainer}>
         <div className={styles.botContent}>
           <Link href="/flashsales"
-            className={`${path === '/flashsales' ? `${styles.linkActive}` : `${styles.link}`}`}>
+            className={`navLink ${path === '/flashsales' ? 'active' : ''}`}>
             <Zap /> FLASH SALES
           </Link>
           <Link href="/raffle"
-            className={`${path === '/raffle' ? `${styles.linkActive}` : `${styles.link}`}`}>
+            className={`navLink ${path === '/raffle' ? 'active' : ''}`}>
             <Shell /> RAFFLE
           </Link>
           <Link href="/auction"
-            className={`${path === '/auction' ? `${styles.linkActive}` : `${styles.link}`}`}>
+            className={`navLink ${path === '/auction' ? 'active' : ''}`}>
             <Gavel /> AUCTION
           </Link>
           <Link href="/freeshipping"
-            className={`${path === '/freeshipping' ? `${styles.linkActive}` : `${styles.link}`}`}>
+            className={`navLink ${path === '/freeshipping' ? 'active' : ''}`}>
             <Truck /> FREE SHIPPING
           </Link>
           <Link href="/installment"
-            className={`${path === '/installment' ? `${styles.linkActive}` : `${styles.link}`}`}>
+            className={`navLink ${path === '/installment' ? 'active' : ''}`}>
             <DatabaseZap /> INSTALLMENT
           </Link>
         </div>

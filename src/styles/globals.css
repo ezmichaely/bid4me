@@ -63,6 +63,18 @@ a, button {
   flex justify-center items-center gap-2
 }
 
+
+.navLink {
+  @apply font-kanit font-medium
+  text-accent hover:text-accent/80 whitespace-nowrap
+}
+
+.navLink.active {
+  @apply font-kanit font-medium
+  text-primary-300 hover:text-accent/80
+}
+
+
 .swiper-pagination .swiper-pagination-bullet {
   @apply bg-primary-400 hover:bg-primary-400/50 transition-width
 }
@@ -70,6 +82,7 @@ a, button {
 .swiper-pagination .swiper-pagination-bullet-active {
   @apply w-6 rounded-lg transition-width
 }
+
 
 
 /* .swiper {

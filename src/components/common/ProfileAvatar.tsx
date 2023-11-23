@@ -8,7 +8,7 @@ import {
 } from "@nextui-org/react";
 import { signOut } from "next-auth/react";
 
-export default function HeaderAvatar() {
+export default function ProfileAvatar() {
 
   return (
     <Dropdown placement="bottom-end">
@@ -36,10 +36,6 @@ export default function HeaderAvatar() {
       </DropdownTrigger>
 
       <DropdownMenu aria-label="User Actions" variant="flat">
-        <DropdownItem key="profile" className="h-14 gap-2">
-          <p className="font-bold">Signed in as</p>
-          <p className="font-bold">@tonyreichert</p>
-        </DropdownItem>
         <DropdownItem key="settings">
           My Settings
         </DropdownItem>

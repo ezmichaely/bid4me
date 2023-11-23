@@ -1,15 +1,12 @@
 "use client"
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { usePathname } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import { useEffect } from 'react';
 import { useMediaQuery } from '@/lib/utils'
-import styles from './mobileNavigation.module.css'
 import { colors } from '@/lib/constants';
 import { BrandName } from '@/components';
-import { BrandIcon } from '@/assets/images';
 import { BrandSvg } from '@/assets/icons';
 import {
   Menu, X, Zap, Gavel,
@@ -95,11 +92,11 @@ export default function AsideNavigation() {
                   <>
                     <div className='w-full flex justify-around items-center flex-wrap'>
                       <Link href="/login" onClick={onClose}
-                        className={`${path === '/login' ? `${styles.linkActive}` : `${styles.link}`}`}>
+                        className={`navLink ${path === '/login' ? 'active' : ''}`}>
                         LOGIN
                       </Link>
                       <Link href="/signup" onClick={onClose}
-                        className={`${path === '/signup' ? `${styles.linkActive}` : `${styles.link}`}`}>
+                        className={`navLink ${path === '/signup' ? 'active' : ''}`}>
                         SIGN UP
                       </Link>
                     </div>
@@ -109,23 +106,23 @@ export default function AsideNavigation() {
 
                 <div className='w-full flex justify-center items-center flex-col gap-5'>
                   <Link href="/flashsales" onClick={onClose}
-                    className={`${path === '/flashsales' ? `${styles.linkActive}` : `${styles.link}`}`}>
+                    className={`navLink ${path === '/flashsales' ? 'active' : ''}`}>
                     <Zap /> FLASH SALES
                   </Link>
                   <Link href="/raffle" onClick={onClose}
-                    className={`${path === '/raffle' ? `${styles.linkActive}` : `${styles.link}`}`}>
+                    className={`navLink ${path === '/raffle' ? 'active' : ''}`}>
                     <Shell /> RAFFLE
                   </Link>
                   <Link href="/auction" onClick={onClose}
-                    className={`${path === '/auction' ? `${styles.linkActive}` : `${styles.link}`}`}>
+                    className={`navLink ${path === '/auction' ? 'active' : ''}`}>
                     <Gavel /> AUCTION
                   </Link>
                   <Link href="/freeshipping" onClick={onClose}
-                    className={`${path === '/freeshipping' ? `${styles.linkActive}` : `${styles.link}`}`}>
+                    className={`navLink ${path === '/freeshipping' ? 'active' : ''}`}>
                     <Truck /> FREE SHIPPING
                   </Link>
                   <Link href="/installment" onClick={onClose}
-                    className={`${path === '/installment' ? `${styles.linkActive}` : `${styles.link}`}`}>
+                    className={`navLink ${path === '/installment' ? 'active' : ''}`}>
                     <DatabaseZap /> INSTALLMENT
                   </Link>
                 </div>
@@ -137,11 +134,11 @@ export default function AsideNavigation() {
               <ModalFooter className='py-0 my-0 bg-secondary-100'>
                 <div className='w-full flex justify-around items-center flex-wrap '>
                   <Link href="/download" onClick={onClose}
-                    className={`${path === '/download' ? `${styles.linkActive}` : `${styles.link}`}`}>
+                    className={`navLink ${path === '/download' ? 'active' : ''}`}>
                     DOWNLOAD APP
                   </Link>
                   <Link href="/becomeaseller" onClick={onClose}
-                    className={`${path === '/becomeaseller' ? `${styles.linkActive}` : `${styles.link}`}`}>
+                    className={`navLink ${path === '/becomeaseller' ? 'active' : ''}`}>
                     BECOME A SELLER
                   </Link>
                 </div>
