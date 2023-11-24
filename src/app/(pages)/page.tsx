@@ -10,8 +10,8 @@ export default function HomePage() {
   return (
     <main>
 
-      <section className='lg:h-[500px] hero grid grid-cols-3 gap-4'>
-        <div className='border border-red-500 h-full col-span-3 lg:col-span-2'>
+      <section className='lg:h-[300px] hero grid grid-cols-3 gap-4'>
+        <div className='h-[300px] border border-red-500 col-span-3 lg:col-span-2'>
           <HeroSwiper />
         </div>
         <div className='h-full col-span-3 lg:col-span-1'>

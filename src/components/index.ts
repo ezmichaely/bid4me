@@ -1,25 +1,26 @@
-import Providers from '@/components/common/Providers';
-import BrandName from '@/components/common/brand/BrandName';
-import Header from '@/components/common/header/Header';
-import Footer from '@/components/common/Footer';
-import HeaderLogo from '@/components/common/brand/HeaderLogo';
-import HeaderAvatar from '@/components/common/ProfileAvatar';
-import AsideNav from '@/components/common/navigation/AsideNav';
-import MobileNav from '@/components/common/navigation/MobileNav';
-import NotificationBell from '@/components/common/NotificationBell';
+import Providers from './common/Providers';
+import BrandName from './common/brand/BrandName';
+import Header from './common/Header';
+import Footer from './common/Footer';
+import HeaderLogo from './common/brand/HeaderLogo';
+import HeaderAvatar from './common/ProfileAvatar';
+import AsideNav from './common/AsideNav';
+import MobileNav from './common/MobileNav';
+import NotificationBell from './common/NotificationBell';
 
-import HeroSwiper from '@/components/common/swiper/HeroSwiper';
+import HeroSwiper from './common/carousel/HeroSwiper';
 
-import SearchBar from '@/components/forms/SearchBar';
-import LoginForm from '@/components/forms/LoginForm';
-import SignupForm from '@/components/forms/SignupForm';
+import SearchBar from './forms/SearchBar';
+import LoginForm from './forms/LoginForm';
+import SignupForm from './forms/SignupForm';
 
 
 
 
 export {
   Providers, BrandName,
-  Header, Footer, HeaderLogo, HeaderAvatar,
+  Header, Footer,
+  HeaderLogo, HeaderAvatar,
   AsideNav, MobileNav,
   NotificationBell,
 

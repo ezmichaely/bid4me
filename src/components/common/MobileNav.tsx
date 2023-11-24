@@ -80,7 +80,6 @@ export default function AsideNavigation() {
                 <Link href="/" onClick={onClose}
                   className='w-fit flex justify-center items-center gap-3' >
                   <BrandSvg />
-                  {/* <Image src={BrandIcon} alt="brand icon" /> */}
                   <BrandName size="small" />
                 </Link>
               </ModalHeader>
@@ -126,7 +125,6 @@ export default function AsideNavigation() {
                     <DatabaseZap /> INSTALLMENT
                   </Link>
                 </div>
-
               </ModalBody>
 
               <Divider className='h-[2px] bg-primary-300' />

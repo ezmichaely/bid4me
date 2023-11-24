@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { Divider } from "@nextui-org/react";
 import { signOut, useSession } from 'next-auth/react';
 import { usePathname } from 'next/navigation';
-import styles from './header.module.css';
+import styles from '@/styles//header.module.css';
 import { colors } from '@/lib/constants';
 import {
   HeaderLogo, SearchBar,
@@ -43,38 +43,38 @@ export default function Header() {
 
             <Divider orientation="vertical" className="w-[2px] bg-accent" />
 
-            {/* {status === 'unauthenticated' && ( */}
-            <>
-              <Link href="/login"
-                className={`navLink ${path === '/login' ? 'active' : ''}`}>
-                LOGIN
-              </Link>
-              <Link href="/signup"
-                className={`navLink ${path === '/signup' ? 'active' : ''}`}>
-                SIGN UP
-              </Link>
-            </>
-            {/* )} */}
+            {status === 'unauthenticated' && (
+              <>
+                <Link href="/login"
+                  className={`navLink ${path === '/login' ? 'active' : ''}`}>
+                  LOGIN
+                </Link>
+                <Link href="/signup"
+                  className={`navLink ${path === '/signup' ? 'active' : ''}`}>
+                  SIGN UP
+                </Link>
+              </>
+            )}
 
-            {/* {status === 'authenticated' && ( */}
-            <>
-              <NotificationBell />
-              <button onClick={() => signOut()} className={styles.link}>LOGOUT</button>
-            </>
-            {/* )} */}
+            {status === 'authenticated' && (
+              <>
+                <NotificationBell />
+                <button onClick={() => signOut()} className={styles.link}>LOGOUT</button>
+              </>
+            )}
           </div>
 
           <div className='relative w-full lg:hidden flex justify-end xs:justify-center py-2 px-6 gap-4 xs:gap-0'>
             <BrandName size='small' />
 
-            {/* {status === 'authenticated' && ( */}
-            <>
-              <Divider orientation={'vertical'} className='block xs:hidden w-[2px] bg-accent' />
-              <div className='block xs:absolute right-1 xs:mr-4'>
-                <NotificationBell />
-              </div>
-            </>
-            {/* )} */}
+            {status === 'authenticated' && (
+              <>
+                <Divider orientation={'vertical'} className='block xs:hidden w-[2px] bg-accent' />
+                <div className='block xs:absolute right-1 xs:mr-4'>
+                  <NotificationBell />
+                </div>
+              </>
+            )}
           </div>
         </div>
 
@@ -93,9 +93,9 @@ export default function Header() {
 
             <MobileNav />
 
-            {/* {status === 'authenticated' && ( */}
-            <HeaderAvatar />
-            {/* )} */}
+            {status === 'authenticated' && (
+              <HeaderAvatar />
+            )}
 
           </div>
         </div>

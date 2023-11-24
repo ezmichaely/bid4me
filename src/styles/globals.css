@@ -75,6 +75,7 @@ a, button {
 }
 
 
+/* swiper */
 .swiper-pagination .swiper-pagination-bullet {
   @apply bg-primary-400 hover:bg-primary-400/50 transition-width
 }

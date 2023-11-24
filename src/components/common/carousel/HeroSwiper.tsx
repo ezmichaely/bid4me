@@ -37,7 +37,7 @@ export default function HeroSwiper() {
       }}
       navigation={false}
       modules={[Autoplay, EffectFade, Pagination]}
-      className="h-[500px]"
+      className="h-full"
     // onAutoplayTimeLeft={onAutoplayTimeLeft}
     >
       <SwiperSlide className='bg-red-500'>Slide 1</SwiperSlide>
