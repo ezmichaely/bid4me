@@ -12,8 +12,8 @@ export interface SvgProps {
   fill?: string;
 }
 
-export interface NavItem {
-  name: string;
-  icon?: keyof typeof Icons
-}
+// export interface NavItem {
+//   name: string;
+//   icon?: keyof typeof Icons
+// }
 
