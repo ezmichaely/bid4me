@@ -5,7 +5,7 @@ import { useState } from "react";
 import { signIn } from 'next-auth/react';
 import { FacebookSvg, GoogleSvg, } from '@/assets/icons'
 import { colors } from "@/constants/constants";
-import { Input, Button } from "@nextui-org/react";
+// import { Input, Button } from "@nextui-org/react";
 import { AtSign, KeyRound, Eye, EyeOff } from "lucide-react";
 import styles from '@/styles/authform.module.css'
 
@@ -28,7 +28,7 @@ export default function SignupForm() {
       <form className={styles.formContent}>
 
         <div className={styles.formProviders}>
-          <Button size="lg" type="button" className={styles.btnProvider}
+          {/* <Button size="lg" type="button" className={styles.btnProvider}
             onClick={() => signIn('google', { callbackUrl: '/' })}>
             <GoogleSvg size={20} />
             Signup with Google
@@ -37,7 +37,7 @@ export default function SignupForm() {
             onClick={() => signIn('facebook', { callbackUrl: '/' })}>
             <FacebookSvg size={20} />
             Signup with Facebook
-          </Button>
+          </Button> */}
         </div>
 
         <div className={styles.formDivider}>
@@ -48,7 +48,7 @@ export default function SignupForm() {
 
         <div className={styles.formCredentials}>
           <div className={styles.formControl}>
-            <Input
+            {/* <Input
               type="email"
               label="Email"
               labelPlacement="outside"
@@ -59,14 +59,14 @@ export default function SignupForm() {
               startContent={
                 <AtSign size={20} color={colors.primary} />
               }
-            // classNames={{
-            //   label: "font-medium",
-            // }}
-            />
+            classNames={{
+              label: "font-medium",
+            }}
+            /> */}
           </div>
 
           <div className={styles.formControl}>
-            <Input
+            {/* <Input
               type={isVisible ? "text" : "password"}
               label="Password"
               labelPlacement="outside"
@@ -86,14 +86,14 @@ export default function SignupForm() {
                   )}
                 </button>
               }
-            // classNames={{
-            //   label: "font-medium",
-            // }}
-            />
+            classNames={{
+              label: "font-medium",
+            }}
+            /> */}
           </div>
 
           <div className={styles.formControl}>
-            <Input
+            {/* <Input
               type={isVisible ? "text" : "password"}
               label="Retype Password"
               labelPlacement="outside"
@@ -113,17 +113,17 @@ export default function SignupForm() {
                   )}
                 </button>
               }
-            // classNames={{
-            //   label: "font-medium",
-            // }}
-            />
+            classNames={{
+              label: "font-medium",
+            }}
+            /> */}
           </div>
         </div>
 
-        <Button size="lg" type="submit" className={styles.btnSubmit}
+        {/* <Button size="lg" type="submit" className={styles.btnSubmit}
           disabled={loginInProgress}>
           SIGN UP
-        </Button>
+        </Button> */}
       </form>
 
       <div className={styles.formFooter}>

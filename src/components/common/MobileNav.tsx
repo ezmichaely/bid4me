@@ -35,7 +35,7 @@ export default function MobileNav() {
 
   useEffect(() => {
     if (isOpen && mediaQuery) { setIsOpen(false); }
-  }, [mediaQuery]);
+  }, [isOpen, mediaQuery]);
 
 
   return (
