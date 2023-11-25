@@ -142,15 +142,6 @@ a, button {
   hover:text-foreground/80 dark:hover:text-background/80
 }
 
-<<<<<<< Updated upstream
-=======
-.notheme.active {
-  @apply font-kanit font-medium
-  text-secondary dark:text-secondary
-  hover:text-foreground/80 dark:hover:text-background/80
-}
-
->>>>>>> Stashed changes
 /* swiper */
 .swiper-pagination .swiper-pagination-bullet {
   @apply bg-secondary hover:bg-secondary/80
