@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Authentication } from '@/assets/images'
-// import { SignupForm } from '@/components'
+import { SignupForm } from '@/components'
 import Image from 'next/image'
 import styles from '@/styles/authform.module.css'
 
@@ -11,14 +11,14 @@ export const metadata: Metadata = {
 
 export default function SignUpPage() {
   return (
-    <main className={styles.main}>
+    <main>
       <section className={styles.section}>
         <div className={styles.content}>
           <div className={styles.rightContent}>
-            <Image src={Authentication} alt="auth" />
+            <Image src={Authentication} alt="auth" priority />
           </div>
           <div className={styles.leftContent}>
-            {/* <SignupForm /> */}
+            <SignupForm />
           </div>
         </div>
       </section>

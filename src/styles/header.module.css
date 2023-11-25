@@ -17,7 +17,7 @@
   @apply w-full h-full
   flex justify-between lg:justify-end items-center
   px-3 ml-16 lg:ml-0
-  gap-3 sm:gap-4
+  gap-3 xs:gap-8
 }
 
 .topBarBrandName {
@@ -27,13 +27,13 @@
 .topBarDownload {
   @apply h-full
   hidden lg:flex
-  justify-end items-center gap-4
+  justify-end items-center gap-8
 }
 
 .topBarAuths {
-  @apply h-full
-  flex justify-end items-center
-  gap-3 sm:gap-4
+  @apply h-full hidden
+  xs:flex justify-end items-center
+  gap-3 xs:gap-8
 }
 .searchBarContainer {
   @apply box-content
@@ -60,7 +60,8 @@
 .botContainer {
   @apply z-10
   h-2 lg:h-auto w-screen
-  bg-primary;
+  bg-primary
+  transition-[height]
 }
 
 .botContent {
@@ -68,7 +69,6 @@
   max-w-screen-2xl mx-auto w-full
   hidden lg:flex justify-center items-center
   flex-row gap-20 xl:gap-28
-   font-bold
-  py-2
+  font-bold py-2
 }
 

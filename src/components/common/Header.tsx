@@ -15,7 +15,6 @@ import {
 
 
 export default function Header() {
-  const path = usePathname();
   const session = useSession();
   const status = session.status;
 

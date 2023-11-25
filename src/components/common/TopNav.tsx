@@ -26,7 +26,7 @@ export default function TopNav() {
           BECOME A SELLER
         </Link>
         <div className='h-full py-2'>
-          <Separator orientation="vertical" className="w-[2px] bg-foreground" />
+          <Separator orientation="vertical" className="bg-foreground" />
         </div>
       </div>
 

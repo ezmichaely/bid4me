@@ -8,35 +8,32 @@ import * as z from "zod"
 import { signIn } from 'next-auth/react';
 import { Button } from "@/components/ui/button"
 import { FacebookSvg, GoogleSvg } from '@/assets/icons'
-import { AtSign, KeyRound, Eye, EyeOff, Check } from "lucide-react";
+import { Eye, EyeOff, Mail, KeySquare, ArrowRightFromLine } from "lucide-react";
 import styles from '@/styles/authform.module.css'
+import { Input } from "@/components/ui/input"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
+
 
 
 const formSchema = z.object({
-  email: z.string().email().min(1, {
-    message: "Username must be at least 2 characters.",
-  }),
-  password: z.string().min(8, {
-    message: "Password must be at least 2 characters."
-  })
+  email: z.string()
+    .min(1, { message: "Email address is required." })
+    .email({ message: "Invalid Email address." }),
+  password: z.string()
+    .min(8, { message: "Password must be at least 8 characters." })
 })
 
 
 function LoginForm() {
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => setIsVisible(!isVisible);
-  const [error, setError] = useState(false);
-
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -55,70 +52,97 @@ function LoginForm() {
 
 
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
-        <div className={styles.formProviders}>
-          <Button size="lg" type="button" className={styles.btnProvider}
-            onClick={() => signIn('google', { callbackUrl: '/' })}>
-            <GoogleSvg size={20} />
-            Continue with Google
-          </Button>
+    <div className={styles.formContainer}>
+      <h3 className={styles.formTitle}>LOGIN</h3>
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
+          <div className={styles.formProviders}>
+            <Button size="lg" type="button" className={styles.btnProvider}
+              onClick={() => signIn('google', { callbackUrl: '/' })}>
+              <GoogleSvg size={20} />
+              Continue with Google
+            </Button>
 
-          <Button size="lg" type="button" className={styles.btnProvider}
-            onClick={() => signIn('facebook', { callbackUrl: '/' })}>
-            <FacebookSvg size={20} />
-            Continue with Facebook
-          </Button>
-        </div>
+            <Button size="lg" type="button" className={styles.btnProvider}
+              onClick={() => signIn('facebook', { callbackUrl: '/' })}>
+              <FacebookSvg size={20} />
+              Continue with Facebook
+            </Button>
+          </div>
 
-        <div className={styles.formDivider}>
-          <div />
-          <p> or Login with Credentials </p>
-          <div />
-        </div>
+          <div className={styles.formDivider}>
+            <div></div>
+            <p> or Login with Credentials </p>
+            <div></div>
+          </div>
 
-        <div >
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Email</FormLabel>
-                <FormControl>
-                  <Input
-                    type="email"
-                    placeholder="Enter your email" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          <div className={styles.formCredentials}>
+            <FormField control={form.control} name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <div className="w-full flex justify-start items-center flex-row gap-3 border border-input rounded-md pl-3 overflow-hidden
+                      focus-within:outline-none focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2">
+                      <Mail />
+                      <Input type="email"
+                        placeholder="Enter your email" {...field}
+                        className="border-0 border-input px-0 rounded-none
+                        focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
+                      />
+                    </div>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
 
-          <FormField
-            control={form.control}
-            name="password"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Password</FormLabel>
-                <FormControl>
-                  <Input
-                    type={isVisible ? "text" : "password"}
-                    placeholder="Enter your password" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-        </div>
+            <FormField control={form.control} name="password"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Password</FormLabel>
+                  <FormControl>
+                    <div className="w-full flex justify-start items-center flex-row gap-3 border border-input rounded-md px-3 pl-3 overflow-hidden
+                      focus-within:outline-none focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 ">
+                      <KeySquare />
+                      <Input type={isVisible ? "text" : "password"}
+                        placeholder="Enter your password" {...field}
+                        className="border-0 border-input px-0 rounded-none
+                        focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
+                      />
+                      <button className="focus:outline-none opacity-60" type="button"
+                        onClick={toggleVisibility}>
+                        {isVisible ? <EyeOff /> : <Eye />}
+                      </button>
+                    </div>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
 
 
-        <Button type="submit">Log me in</Button>
-        <div className={styles.formFooter}>
-          <p>Don&apos;t have an account? &nbsp;</p>
-          <Link href="/signup">Sign Up here.</Link>
-        </div>
-      </form>
-    </Form>
+          <div className={styles.forgotPass}>
+            <Link href="/forgotpassword">Forgot Password?</Link>
+          </div>
+
+          <div className="py-2">
+            <Button size="lg" type="submit" className="w-full font-bold text-md">
+              {/* <ArrowRightFromLine /> */}
+              <span>Log me in</span>
+            </Button>
+          </div>
+
+          <div className={styles.formFooter}>
+            <p>Don&apos;t have an account? &nbsp;</p>
+            <Link href="/signup" className="text-secondary hover:text-secondary/80 dark:text-primary dark:hover:text-primary/80">
+              Signup here.
+            </Link>
+          </div>
+        </form>
+      </Form>
+    </div>
   )
 }
 

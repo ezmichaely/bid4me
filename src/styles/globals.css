@@ -21,7 +21,7 @@
     --secondary-foreground: 210 33.3% 97.6%; /* whitish */
 
     --muted: 214.7 65.5% 94.3%; /* whitish-400 */
-    --muted-foreground: 210 33.3% 97.6%;  /* whitish */
+    --muted-foreground: 222.2 47.4% 11.2%; /* slate */
 
     --accent: 222.2 47.4% 11.2%; /* slate */
     --accent-foreground: 210 33.3% 97.6%;  /* whitish */
@@ -35,9 +35,9 @@
     --success: 142.1 76.2% 36.3%; /* green */
     --success-foreground: 210 33.3% 97.6%;  /* whitish */
 
-    --border: 252.4 85.6% 30% /* violet */
-    --input: 252.4 85.6% 30% /* violet */
-    --ring: 45 100% 54%; /* yellow */
+    --border: 252.4 85.6% 30%; /* violet */
+    --input: 252.4 85.6% 30%; /* violet */
+    --ring: 252.4 85.6% 30%; /* violet */
 
     --radius: 0.75rem;
   }
@@ -58,10 +58,8 @@
     --secondary: 252.4 85.6% 30%; /* violet */
     --secondary-foreground: 210 33.3% 97.6%; /* whitish */
 
-    --muted: 214.7 65.5% 94.3%; /* whitish-400 */
+    --muted: 222.2 47.4% 11.2%; /* slate */
     --muted-foreground: 210 33.3% 97.6%;  /* whitish */
-
-
 
     --accent: 210 33.3% 97.6%;  /* whitish */
     --accent-foreground: 222.2 47.4% 11.2%; /* slate */
@@ -90,7 +88,7 @@
 
   body {
     @apply bg-background text-foreground p-0 m-0
-    overflow-x-hidden w-screen font-inter h-screen
+    overflow-x-hidden w-screen font-inter min-h-screen
   }
 
   /* scrollbar */
@@ -151,8 +149,10 @@ a, button {
 /* swiper */
 .swiper-pagination .swiper-pagination-bullet {
   @apply bg-secondary hover:bg-secondary/80
+    transition-[width]
 }
 
 .swiper-pagination .swiper-pagination-bullet-active {
   @apply w-6 rounded-lg
+  transition-[width]
 }

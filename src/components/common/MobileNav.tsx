@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useSession } from 'next-auth/react';
 import { useEffect, useState } from 'react';
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { colors } from '@/constants/constants';
@@ -23,6 +24,9 @@ import {
 
 export default function MobileNav() {
   const path = usePathname();
+  const session = useSession();
+  const status = session.status;
+
   const mediaQuery = useMediaQuery(1024);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -57,7 +61,22 @@ export default function MobileNav() {
               <BrandName size="small" />
             </Link>
           </DialogHeader>
+
           <Separator className="bg-secondary dark:bg-primary" />
+
+          {status === 'unauthenticated' && (
+            <div className='w-full xs:hidden flex justify-around items-center flex-wrap py-2 bg-primary'>
+              <Link href="/login" onClick={() => setIsOpen(false)}
+                className={`navLink notheme ${path === '/login' ? 'active' : ''}`}>
+                LOG IN
+              </Link>
+              <Link href="/signup" onClick={() => setIsOpen(false)}
+                className={`navLink notheme ${path === '/signup' ? 'active' : ''}`}>
+                SIGN UP
+              </Link>
+            </div>
+          )}
+
           <div className="w-full flex justify-center items-center flex-col gap-4">
             <Link href="/flashsales" onClick={() => setIsOpen(false)}
               className={`${path === '/flashsales' ? `${css.mobileLinkActive}` : `${css.mobileLink}`}`}>
@@ -80,6 +99,7 @@ export default function MobileNav() {
               <DatabaseZap /> INSTALLMENT
             </Link>
           </div>
+
           <DialogFooter className='py-2 my-0 bg-primary'>
             <div className='w-full flex justify-around items-center flex-wrap '>
               <Link href="/download" onClick={() => setIsOpen(false)}
@@ -92,6 +112,7 @@ export default function MobileNav() {
               </Link>
             </div>
           </DialogFooter>
+
         </DialogContent>
       </Dialog>
     </>

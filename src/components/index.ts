@@ -21,7 +21,7 @@ import HeroSwiper from './carousel/HeroSwiper';
 
 import SearchBar from './forms/SearchBar';
 import LoginForm from './forms/LoginForm';
-// import SignupForm from './forms/SignupForm';
+import SignupForm from './forms/SignupForm';
 
 
 
@@ -38,9 +38,7 @@ export {
 
   HeroSwiper,
 
-  SearchBar,
-  LoginForm,
-  // SignupForm,
+  SearchBar, LoginForm, SignupForm,
 
 
 
