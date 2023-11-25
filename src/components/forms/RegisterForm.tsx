@@ -15,7 +15,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 
-import { BsBoxArrowRight } from 'react-icons/bs'
+// import { BsBoxArrowRight } from 'react-icons/bs'
 import Link from "next/link"
 
 
@@ -85,7 +85,7 @@ export default function RegisterForm() {
             </FormItem>
           )}
         />
-        
+
         {/* first name && middle name */}
         <div className="w-full flex justify-between items-start flex-row gap-3">
           <FormField

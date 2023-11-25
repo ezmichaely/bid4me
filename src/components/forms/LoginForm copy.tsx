@@ -3,7 +3,10 @@
 import Link from "next/link";
 import { useState } from "react";
 import { signIn } from 'next-auth/react';
-import { FacebookSvg, GoogleSvg, CheckBoxSvg } from '@/assets/icons'
+import {
+  FacebookSvg, GoogleSvg,
+  // CheckBoxSvg
+} from '@/assets/icons'
 import { colors } from "@/constants/constants";
 import { Input, Checkbox, Button } from "@nextui-org/react";
 import { AtSign, KeyRound, Eye, EyeOff, Check } from "lucide-react";
