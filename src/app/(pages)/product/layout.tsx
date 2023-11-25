@@ -15,8 +15,8 @@ const kanitOnline = Kanit({
 })
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const htmlClass = `light ${inter.variable} ${kanit.variable}`
-  // ${interOnline.className} ${kanitOnline.className}`
+  // const htmlClass = `light ${inter.variable} ${kanit.variable}`
+  const htmlClass = `light ${interOnline.className} ${kanitOnline.className}`
 
 
   return (
