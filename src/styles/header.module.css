@@ -1,11 +1,17 @@
 .header {
+<<<<<<< Updated upstream
   @apply w-screen block bg-white
+=======
+  @apply w-screen bg-background
+  my-0 py-0 select-none
+>>>>>>> Stashed changes
 }
 
 .topContainer {
   @apply relative h-24 w-full
 }
 
+<<<<<<< Updated upstream
 .logoPlaceholder {
   @apply relative max-w-screen-2xl mx-auto
   border
@@ -26,34 +32,85 @@
   @apply text-accent hover:text-accent/80
 }
 
+=======
+.topBarContainer {
+  @apply min-h-[35px] h-[35px] w-full
+  bg-background flex justify-end
+  max-w-screen-2xl mx-auto
+}
+
+.topBarContent {
+  @apply w-full h-full
+  flex justify-between lg:justify-end items-center
+  px-3 ml-16 lg:ml-0
+  gap-3 sm:gap-4
+}
+
+.topBarBrandName {
+  @apply w-full lg:hidden
+}
+
+.topBarDownload {
+  @apply h-full
+  hidden lg:flex
+  justify-end items-center gap-4
+}
+
+.topBarAuths {
+  @apply h-full
+  flex justify-end items-center
+  gap-3 sm:gap-4
+}
+>>>>>>> Stashed changes
 .searchBarContainer {
   @apply box-content
   min-h-[62px] max-h-[62px] h-[62px]
   w-screen
+<<<<<<< Updated upstream
   bg-primary-400
+=======
+  bg-secondary
+>>>>>>> Stashed changes
 }
 
 .searchBarContent {
   @apply ease-linear duration-150
   max-w-screen-2xl mx-auto w-full h-full
+<<<<<<< Updated upstream
   pl-24 lg:pl-[270px] py-2 pr-4
   flex justify-start items-center flex-row
   gap-4 lg:gap-6
 
   /* border border-red-500 */
+=======
+  py-2 pr-3
+  flex justify-start items-center flex-row
+  gap-4 lg:gap-6
+>>>>>>> Stashed changes
 }
 
 .whiteBg {
   @apply absolute top-0 left-0
+<<<<<<< Updated upstream
   min-h-[88px] max-h-[88px] h-[88px]
   bg-white
+=======
+  min-h-[87px] max-h-[87px] h-[87px]
+  bg-background
+>>>>>>> Stashed changes
   w-[calc((100vw_-_1533px)_/_2)]
 }
 
 .botContainer {
+<<<<<<< Updated upstream
   @apply transition-height
   h-2 lg:h-auto w-screen
   bg-secondary-300 ;
+=======
+  @apply z-10
+  h-2 lg:h-auto w-screen
+  bg-primary;
+>>>>>>> Stashed changes
 }
 
 .botContent {
@@ -61,6 +118,7 @@
   max-w-screen-2xl mx-auto w-full
   hidden lg:flex justify-center items-center
   flex-row gap-20 xl:gap-28
+<<<<<<< Updated upstream
  text-accent font-bold
   py-2
 }
@@ -68,3 +126,9 @@
 .botContent a {
   @apply whitespace-nowrap flex gap-2
 }
+=======
+   font-bold
+  py-2
+}
+
+>>>>>>> Stashed changes

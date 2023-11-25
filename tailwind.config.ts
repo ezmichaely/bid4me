@@ -1,14 +1,17 @@
-import type { Config } from 'tailwindcss'
-import { nextui } from "@nextui-org/react";
-
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: ["class"],
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-    './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
   ],
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+    },
     extend: {
       screens: {
         'xs': '430px',
@@ -22,74 +25,92 @@ const config: Config = {
         auth: 'linear-gradient(180deg, #4B48E5 0%, rgba(157, 103, 234, 0.00) 94.76%)',
       },
       colors: {
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
         primary: {
-          100: '#4B48E5',
-          200: '#2B23EC',
-          300: '#2925CC',
-          400: '#260B8E',
-          500: '#02033B',
-        },
-        secondary: {
           100: '#F7C95F',
           200: '#FDCD45',
           300: '#FFC614',
           400: '#FDB235',
-          500: '#B27822',
+          600: '#B27822',
+          hover: '#F7C95F',
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
         },
-        accent: '#0F172A',
+        secondary: {
+          100: '#3C11DE',
+          200: '#2925CC',
+          300: '#2B23EC',
+          400: '#260B8E',
+          600: '#02033B',
+          hover: '#3C11DE',
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        success: {
+          hover: '#22C55E',
+          DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--success-foreground))",
+        },
+        warning: {
+          hover: '#FA8838',
+          DEFAULT: "hsl(var(--warning))",
+          foreground: "hsl(var(--warning-foreground))",
+        },
+        destructive: {
+          hover: '#E84A6D',
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          hover: '#F2F7FC',
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          500: 'hsl(var(--accent))',
+          hover: '#172340',
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
         whites: {
           100: '#F6F6F6',
           200: '#F3F8FF',
           300: '#E7EFFA',
           400: '#D9D9D9'
-        }
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: 0 },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: 0 },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },
-  darkMode: "class",
-  plugins: [nextui({
-    prefix: "nextui",
-    addCommonColors: true,
-    defaultTheme: "light",
-    defaultExtendTheme: "light",
-    themes: {
-      mamba: {
-        colors: {
-          primary: {
-            DEFAULT: '#260B8E',
-            foreground: '#ffffff'
-          },
-          secondary: {
-            DEFAULT: '#FFC614',
-            foreground: '#0F172A'
-          },
-        },
-      },
-      light: {
-        colors: {
-          primary: {
-            DEFAULT: '#260B8E',
-            foreground: '#ffffff'
-          },
-          secondary: {
-            DEFAULT: '#FFC614',
-            foreground: '#0F172A'
-          },
-        },
-      },
-      dark: {
-        colors: {
-          primary: {
-            DEFAULT: '#260B8E',
-            foreground: '#ffffff'
-          },
-          secondary: {
-            DEFAULT: '#FFC614',
-            foreground: '#0F172A'
-          },
-        },
-      },
-    }
-  })],
+  plugins: [require("tailwindcss-animate")],
 }
-export default config

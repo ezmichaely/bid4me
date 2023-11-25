@@ -24,7 +24,7 @@
 .leftContent {
   @apply w-full lg:w-3/5 max-w-md
   flex justify-start items-start
-  bg-white p-5 shadow-xl
+  bg-background p-5 shadow-xl
   /* border border-red-500 */
 }
 
@@ -37,11 +37,13 @@
 }
 
 .formContent {
-  @apply block w-full mt-4
+  @apply block w-full
 }
 
 .formProviders {
   @apply w-full space-y-4
+
+  border border-red-500
 }
 
 .formCredentials {
@@ -55,7 +57,9 @@
 
 .formDivider {
   @apply flex justify-between items-center flex-row
-  flex-nowrap gap-x-4 py-6
+  flex-nowrap gap-x-4 py-2
+
+  border border-red-500
 }
 
 .formDivider div {

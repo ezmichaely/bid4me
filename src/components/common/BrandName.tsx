@@ -1,7 +1,7 @@
 import {
   BrandNameProps,
   BrandNameSizeClassesProps
-} from '@/lib/interface';
+} from '@/types';
 
 export default function BrandName({ size }: BrandNameProps) {
   function getSize(size: 'main' | 'small'): BrandNameSizeClassesProps {
@@ -19,8 +19,8 @@ export default function BrandName({ size }: BrandNameProps) {
     return { h1: '', span4: '' };
   }
 
-  const h1Class = 'font-kanit text-accent font-bold w-fit flex justify-start items-center'
-  const span4Class = 'text-primary-300 italic leading-none skew-y-[15deg]'
+  const h1Class = 'select-none font-kanit text-foreground font-bold w-fit flex justify-start items-center'
+  const span4Class = 'text-secondary dark:text-primary italic leading-none skew-y-[15deg]'
 
   const sizes = getSize(size);
   const h1Classes = `${h1Class} ${sizes.h1}`;

@@ -2,7 +2,98 @@
 @tailwind components;
 @tailwind utilities;
 
+/* bid4me theme */
 @layer base {
+  :root {
+    --background: 210 33.3% 97.6%;  /* whitish */
+    --foreground: 222.2 47.4% 11.2%;  /* slate */
+
+    --card: 210 33.3% 97.6%; /* whitish */
+    --card-foreground: 222.2 47.4% 11.2%;  /* slate */
+
+    --popover: 210 33.3% 97.6%; /* whitish */
+    --popover-foreground: 222.2 47.4% 11.2%;  /* slate */
+
+    --primary: 45 100% 54%; /* yellow */
+    --primary-foreground: 222.2 47.4% 11.2%; /* slate */
+
+    --secondary: 252.4 85.6% 30%; /* violet */
+    --secondary-foreground: 210 33.3% 97.6%; /* whitish */
+
+    --muted: 214.7 65.5% 94.3%; /* whitish-400 */
+    --muted-foreground: 210 33.3% 97.6%;  /* whitish */
+
+    --accent: 222.2 47.4% 11.2%; /* slate */
+    --accent-foreground: 210 33.3% 97.6%;  /* whitish */
+
+    --destructive: 346.8 77.2% 49.8%; /* rose */
+    --destructive-foreground: 210 33.3% 97.6%;  /* whitish */
+
+    --warning: 24.6 95% 53.1%; /* orange */
+    --warning-foreground: 222.2 47.4% 11.2%;  /* slate */
+
+    --success: 142.1 76.2% 36.3%; /* green */
+    --success-foreground: 210 33.3% 97.6%;  /* whitish */
+
+    --border: 252.4 85.6% 30% /* violet */
+    --input: 252.4 85.6% 30% /* violet */
+    --ring: 45 100% 54%; /* yellow */
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222.2 47.4% 11.2%;  /* slate */
+    --foreground: 210 33.3% 97.6%;  /* whitish */
+
+    --card: 222.2 47.4% 11.2%;  /* slate */
+    --card-foreground: 210 33.3% 97.6%;  /* whitish */
+
+    --popover: 222.2 47.4% 11.2%;  /* slate */
+    --popover-foreground: 210 33.3% 97.6%;  /* whitish */
+
+    --primary: 45 100% 54%; /* yellow */
+    --primary-foreground: 222.2 47.4% 11.2%; /* slate */
+
+    --secondary: 252.4 85.6% 30%; /* violet */
+    --secondary-foreground: 210 33.3% 97.6%; /* whitish */
+
+    --muted: 214.7 65.5% 94.3%; /* whitish-400 */
+    --muted-foreground: 210 33.3% 97.6%;  /* whitish */
+
+
+
+    --accent: 210 33.3% 97.6%;  /* whitish */
+    --accent-foreground: 222.2 47.4% 11.2%; /* slate */
+
+    --destructive: 346.8 77.2% 49.8%; /* rose */
+    --destructive-foreground: 210 33.3% 97.6%;  /* whitish */
+
+    --warning: 24.6 95% 53.1%; /* orange */
+    --warning-foreground: 222.2 47.4% 11.2%;  /* slate */
+
+    --success: 142.1 76.2% 36.3%; /* green */
+    --success-foreground: 210 33.3% 97.6%;  /* whitish */
+
+    --border: 45 100% 54%; /* yellow */
+    --input: 45 100% 54%; /* yellow */
+    --ring: 45 100% 54%; /* yellow */
+
+    --ring: 35.5 91.7% 32.9%;
+  }
+}
+
+@layer base {
+  *, *::before, *::after {
+    @apply box-border
+  }
+
+  body {
+    @apply bg-background text-foreground p-0 m-0
+    overflow-x-hidden w-screen font-inter h-screen
+  }
+
+  /* scrollbar */
   /* width */
   ::-webkit-scrollbar {
     @apply w-2 h-2;
@@ -10,57 +101,29 @@
 
   /* Track */
   ::-webkit-scrollbar-track {
-    @apply bg-primary-400
+    @apply bg-secondary-400
   }
 
 
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    @apply bg-secondary-400
+    @apply bg-primary-400
   }
 
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-secondary-300
+    @apply bg-primary-300
   }
-}
-
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-} */
-
-*, *::after, *::before {
-  @apply box-border
-}
-
-body {
-  @apply overflow-x-hidden w-screen
-  text-accent font-inter h-screen
-  bg-whites-100
-  /* border border-red-500 */
 }
 
 main {
   @apply max-w-screen-2xl mx-auto w-screen
   min-h-[calc(100vh_-_138px)]
-  pt-3 px-3
-  /* border border-red-500 */
+  p-3
 }
 
 a, button {
-  @apply
-  /* font-medium */
-  flex justify-center items-center gap-2
+  @apply flex justify-center items-center gap-2
 }
 
 
@@ -71,39 +134,28 @@ a, button {
 
 .navLink.active {
   @apply font-kanit font-medium
-  text-primary-300 hover:text-accent/80
+  text-secondary dark:text-primary hover:text-accent/80
 }
 
+.notheme {
+  @apply text-foreground dark:text-background
+  hover:text-foreground/80 dark:hover:text-background/80
+}
 
+<<<<<<< Updated upstream
+=======
+.notheme.active {
+  @apply font-kanit font-medium
+  text-secondary dark:text-secondary
+  hover:text-foreground/80 dark:hover:text-background/80
+}
+
+>>>>>>> Stashed changes
 /* swiper */
 .swiper-pagination .swiper-pagination-bullet {
-  @apply bg-primary-400 hover:bg-primary-400/50 transition-width
+  @apply bg-secondary hover:bg-secondary/80
 }
 
 .swiper-pagination .swiper-pagination-bullet-active {
-  @apply w-6 rounded-lg transition-width
+  @apply w-6 rounded-lg
 }
-
-
-
-/* .swiper {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
-/* .swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-} */

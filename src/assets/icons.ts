@@ -1,10 +1,11 @@
 import BrandSvg from "./icons/BrandSvg";
 import GoogleSvg from "./icons/GoogleSvg";
 import FacebookSvg from "./icons/FacebookSvg";
-import CheckBoxSvg from "./icons/CheckBoxSvg";
+import ShapeDarkSvg from "./icons/ShapeDarkSvg";
+import ShapeLightSvg from "./icons/ShapeLightSvg";
 
 export {
   BrandSvg,
   GoogleSvg, FacebookSvg,
-  CheckBoxSvg,
+  ShapeDarkSvg, ShapeLightSvg,
 }

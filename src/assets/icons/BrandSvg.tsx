@@ -1,4 +1,4 @@
-import { SvgProps } from "@/lib/interface"
+import { SvgProps } from "@/types/interface"
 
 export default function GoogleIcon({ size, fill }: SvgProps) {
 

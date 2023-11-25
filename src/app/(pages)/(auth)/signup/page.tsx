@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Authentication } from '@/assets/images'
-import { SignupForm } from '@/components'
+// import { SignupForm } from '@/components'
 import Image from 'next/image'
 import styles from '@/styles/authform.module.css'
 
@@ -18,7 +18,7 @@ export default function SignUpPage() {
             <Image src={Authentication} alt="auth" />
           </div>
           <div className={styles.leftContent}>
-            <SignupForm />
+            {/* <SignupForm /> */}
           </div>
         </div>
       </section>

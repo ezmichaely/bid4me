@@ -2,7 +2,11 @@
 
 import { Inter, Kanit } from 'next/font/google'
 import { inter, kanit } from '@/assets/fonts';
-import { Providers, Header } from "@/components";
+import {
+  NextAuthProvider,
+  Header
+} from "@/components";
+import { NextThemeProvider } from '@/components/providers/NextThemeProvider';
 import '@/styles/globals.css'
 
 const interOnline = Inter({ subsets: ['latin'] })
@@ -18,12 +22,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 
   return (
-    <html lang="en" className={htmlClass}>
+    <html lang="en" className={htmlClass} suppressHydrationWarning>
       <body>
-        <Providers>
-          <Header />
-          {children}
-        </Providers>
+        <NextThemeProvider
+          attribute='class'
+          defaultTheme='white'
+          enableSystem
+        >
+          <NextAuthProvider>
+            <Header />
+            {children}
+          </NextAuthProvider>
+        </NextThemeProvider>
       </body>
     </html>
   )

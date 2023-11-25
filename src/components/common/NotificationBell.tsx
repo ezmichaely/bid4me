@@ -2,21 +2,25 @@
 
 import Link from 'next/link'
 import { Bell } from 'lucide-react';
-import { Badge } from "@nextui-org/react";
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 
 export default function NotificationBell() {
   const path = usePathname();
-  const [isInvisible, setIsInvisible] = useState(false);
+  const [isInvisible, setIsInvisible] = useState(true);
 
 
   return (
-    <Badge color="danger" size="sm" content="" shape="circle" isInvisible={isInvisible} className='animate-pulse'>
+    <>
       <Link href="/notifications"
-        className={`navLink ${path === '/notifications' ? 'active' : ''}`}>
+        className={`relative w-fit navLink ${path === '/notifications' ? 'active' : ''}`}>
         <Bell className="fill-current" size={20} />
+        {isInvisible && (
+          <div className='absolute -top-1 -right-1 bg-destructive w-3 h-3 rounded-full flex justify-center items-center'>
+            <div className='bg-destructive w-3 h-3 rounded-full animate-ping'> </div>
+          </div>
+        )}
       </Link>
-    </Badge >
+    </>
   )
 }

@@ -1,11 +1,10 @@
 "use client"
 
-import { NextUIProvider } from '@nextui-org/react'
 import { SessionProvider } from 'next-auth/react'
 import { usePathname } from 'next/navigation'
 import { useEffect } from 'react';
 
-export default function Providers({ children }: { children: React.ReactNode }) {
+export default function NextAuthProvider({ children }: { children: React.ReactNode }) {
   const path = usePathname();
 
   useEffect(() => {
@@ -24,9 +23,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
 
   return (
     <SessionProvider>
-      <NextUIProvider>
-        {children}
-      </NextUIProvider>
+      {children}
     </SessionProvider>
   )
 }
