@@ -1,5 +1,5 @@
 import { Inter, Kanit } from 'next/font/google'
-import { inter, kanit } from '@/assets/fonts';
+// import { inter, kanit } from '@/assets/fonts';
 import {
   NextAuthProvider,
   Header
@@ -7,17 +7,24 @@ import {
 import { NextThemeProvider } from '@/components/providers/NextThemeProvider';
 import '@/styles/globals.css'
 
-const interOnline = Inter({ subsets: ['latin'] })
-const kanitOnline = Kanit({
+const inter = Inter({
   subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+  style: ['normal'],
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  style: ['normal', 'italic']
+})
+const kanit = Kanit({
+  subsets: ['latin'],
+  variable: '--font-kanit',
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  style: ['normal', 'italic'],
+  display: 'swap',
 })
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  // const htmlClass = `light ${inter.variable} ${kanit.variable}`
-  const htmlClass = `light ${interOnline.className} ${kanitOnline.className}`
-
+  const htmlClass = `light ${inter.variable} ${kanit.variable}`
+  // const htmlClass = `light ${interOnline.className} ${kanitOnline.className}`
 
   return (
     <html lang="en" className={htmlClass} suppressHydrationWarning>
