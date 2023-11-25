@@ -2,16 +2,17 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
-import * as z from "zod"
 import { signIn } from 'next-auth/react';
-import { Button } from "@/components/ui/button"
+import * as z from "zod"
+import { zodResolver } from "@hookform/resolvers/zod"
 import { FacebookSvg, GoogleSvg } from '@/assets/icons'
-import { Eye, EyeOff, Mail, KeySquare, ArrowRightFromLine } from "lucide-react";
+import { Eye, EyeOff, Mail, KeySquare, } from "lucide-react";
 import styles from '@/styles/authform.module.css'
+import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Checkbox } from "@/components/ui/checkbox"
+import { Separator } from "@radix-ui/react-separator";
 import {
   Form,
   FormControl,
@@ -21,25 +22,26 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 
-const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/
-const formSchema = z.object({
-  email: z.string()
-    .min(1, { message: "Email address is required." })
-    .email({ message: "Invalid Email address." }),
-  password: z.string()
-    .regex(regex, { message: "Password needs an uppercase, a digit, a special character, and must be 8-20 characters long." })
-    .min(8, { message: "Password must be at least 8 characters." }),
-  retypepassword: z.string()
-})
-  .refine((data) => data.password === data.retypepassword, {
-    message: "Passwords don't match.",
-    path: ["retypepassword"], // path of error
-  });
-
 
 function SignupForm() {
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => setIsVisible(!isVisible);
+
+  const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/
+  const formSchema = z.object({
+    email: z.string()
+      .min(1, { message: "Email address is required." })
+      .email({ message: "Invalid Email address." }),
+    password: z.string()
+      .regex(regex, { message: "Password needs an uppercase, a digit, a special character, and must be 8-20 characters long." })
+      .min(8, { message: "Password must be at least 8 characters." }),
+    retypepassword: z.string()
+  })
+    .refine((data) => data.password === data.retypepassword, {
+      message: "Passwords don't match.",
+      path: ["retypepassword"], // path of error
+    });
+
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -78,9 +80,9 @@ function SignupForm() {
           </div>
 
           <div className={styles.formDivider}>
-            <div></div>
+            <Separator />
             <p> or Signup with Credentials </p>
-            <div></div>
+            <Separator />
           </div>
 
           <div className={styles.formCredentials}>
@@ -141,10 +143,10 @@ function SignupForm() {
                         className="border-0 border-input px-0 rounded-none
                         focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
                       />
-                      <button className="focus:outline-none opacity-60" type="button"
+                      {/* <button className="focus:outline-none opacity-60" type="button"
                         onClick={toggleVisibility}>
                         {isVisible ? <EyeOff /> : <Eye />}
-                      </button>
+                      </button> */}
                     </div>
                   </FormControl>
                   <FormMessage />

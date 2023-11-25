@@ -2,15 +2,16 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
-import * as z from "zod"
 import { signIn } from 'next-auth/react';
-import { Button } from "@/components/ui/button"
+import * as z from "zod"
+import { zodResolver } from "@hookform/resolvers/zod"
 import { FacebookSvg, GoogleSvg } from '@/assets/icons'
-import { Eye, EyeOff, Mail, KeySquare, ArrowRightFromLine } from "lucide-react";
+import { Eye, EyeOff, Mail, KeySquare, } from "lucide-react";
 import styles from '@/styles/authform.module.css'
-import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Separator } from "@radix-ui/react-separator";
 import {
   Form,
   FormControl,
@@ -21,19 +22,18 @@ import {
 } from "@/components/ui/form"
 
 
-
-const formSchema = z.object({
-  email: z.string()
-    .min(1, { message: "Email address is required." })
-    .email({ message: "Invalid Email address." }),
-  password: z.string()
-    .min(8, { message: "Password must be at least 8 characters." })
-})
-
-
 function LoginForm() {
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => setIsVisible(!isVisible);
+
+  const formSchema = z.object({
+    email: z.string()
+      .min(1, { message: "Email address is required." })
+      .email({ message: "Invalid Email address." }),
+    password: z.string()
+      .min(8, { message: "Password must be at least 8 characters." })
+  })
+
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -71,9 +71,9 @@ function LoginForm() {
           </div>
 
           <div className={styles.formDivider}>
-            <div></div>
+            <Separator />
             <p> or Login with Credentials </p>
-            <div></div>
+            <Separator />
           </div>
 
           <div className={styles.formCredentials}>
