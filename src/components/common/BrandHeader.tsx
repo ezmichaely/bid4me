@@ -25,7 +25,7 @@ export default function BrandHeader() {
       fillColor = colors.background
       break
     default:
-      fillColor = colors.background
+      fillColor = colors.foreground
       break
   }
 
