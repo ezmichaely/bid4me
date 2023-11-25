@@ -8,7 +8,7 @@ import {
   // CheckBoxSvg
 } from '@/assets/icons'
 import { colors } from "@/constants/constants";
-import { Input, Checkbox, Button } from "@nextui-org/react";
+// import { Input, Checkbox, Button } from "@nextui-org/react";
 import { AtSign, KeyRound, Eye, EyeOff, Check } from "lucide-react";
 import styles from '@/styles/authform.module.css'
 
@@ -60,17 +60,17 @@ export default function LoginForm() {
 
       <form className={styles.formContent}>
         <div className={styles.formProviders}>
-          <Button size="lg" type="button" className={styles.btnProvider}
+          {/* <Button size="lg" type="button" className={styles.btnProvider}
             onClick={() => signIn('google', { callbackUrl: '/' })}>
             <GoogleSvg size={20} />
             Continue with Google
-          </Button>
+          </Button> */}
 
-          <Button size="lg" type="button" className={styles.btnProvider}
+          {/* <Button size="lg" type="button" className={styles.btnProvider}
             onClick={() => signIn('facebook', { callbackUrl: '/' })}>
             <FacebookSvg size={20} />
             Continue with Facebook
-          </Button>
+          </Button> */}
         </div>
 
         <div className={styles.formDivider}>
@@ -81,7 +81,7 @@ export default function LoginForm() {
 
         <div className={styles.formCredentials}>
           <div className={styles.formControl}>
-            <Input
+            {/* <Input
               type="email"
               label="Email"
               labelPlacement="outside"
@@ -92,14 +92,14 @@ export default function LoginForm() {
               startContent={
                 <AtSign size={20} color={colors.primary} />
               }
-            // classNames={{
-            //   label: "font-medium",
-            // }}
-            />
+            classNames={{
+              label: "font-medium",
+            }}
+            /> */}
           </div>
 
           <div className={styles.formControl}>
-            <Input
+            {/* <Input
               type={isVisible ? "text" : "password"}
               label="Password"
               labelPlacement="outside"
@@ -119,16 +119,16 @@ export default function LoginForm() {
                   )}
                 </button>
               }
-            // classNames={{
-            //   label: "font-medium",
-            // }}
-            />
+            classNames={{
+              label: "font-medium",
+            }}
+            /> */}
           </div>
 
           <div className={styles.formCheck}>
-            <Checkbox defaultSelected={false}
+            {/* <Checkbox defaultSelected={false}
               size="md"
-              // icon={<CheckBoxSvg fill={colors.secondary} />}
+              icon={<CheckBoxSvg fill={colors.secondary} />}
               classNames={{
                 icon: "text-secondary-300",
                 wrapper: "after:bg-primary-400",
@@ -136,17 +136,17 @@ export default function LoginForm() {
               }}
             >
               Keep me logged in.
-            </Checkbox>
+            </Checkbox> */}
 
             <Link href="/forgotpassword">Forgot Password?</Link>
           </div>
         </div>
 
 
-        <Button size="lg" type="submit" disabled={loginInProgress}
+        {/* <Button size="lg" type="submit" disabled={loginInProgress}
           className={styles.btnSubmit}>
           LOGIN
-        </Button>
+        </Button> */}
       </form>
 
       <div className={styles.formFooter}>
