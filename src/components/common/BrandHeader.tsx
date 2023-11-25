@@ -25,9 +25,11 @@ export default function BrandHeader() {
       fillColor = colors.background
       break
     default:
-      fillColor = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
+      fillColor = colors.background
       break
   }
+
+
 
   return (
     <Link href="/" className={css.linkDiv}>
