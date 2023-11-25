@@ -242,7 +242,7 @@ export default function RegisterForm() {
         <Button type="submit"
           size="lg"
           className="w-full text-base">
-          <BsBoxArrowRight className='mr-3 text-xl' />
+          {/* <BsBoxArrowRight className='mr-3 text-xl' /> */}
           <span className="tracking-widest">REGISTER</span>
         </Button>
 
