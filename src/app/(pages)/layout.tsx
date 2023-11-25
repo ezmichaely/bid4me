@@ -1,5 +1,3 @@
-
-
 import { Inter, Kanit } from 'next/font/google'
 import { inter, kanit } from '@/assets/fonts';
 import {
