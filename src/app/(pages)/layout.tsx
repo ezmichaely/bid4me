@@ -24,8 +24,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <NextThemeProvider
           attribute='class'
-          defaultTheme='white'
-          enableSystem
+          defaultTheme='light'
+          enableSystem={false}
         >
           <NextAuthProvider>
             <Header />
