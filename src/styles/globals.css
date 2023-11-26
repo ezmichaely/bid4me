@@ -115,11 +115,11 @@
 }
 
 main {
-  @apply w-full min-h-[calc(100vh_-_138px)]
+  @apply w-full min-h-[calc(100vh_-_138px)] mt-3
 }
 
 section {
-  @apply w-full
+  @apply w-full border border-red-500
 }
 
 section .container {

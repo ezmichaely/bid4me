@@ -35,7 +35,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           enableSystem={false}
         >
           <NextAuthProvider>
-            <Header />
+            {/* <Header /> */}
             {children}
           </NextAuthProvider>
         </NextThemeProvider>

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <main>
-      <section >
+      <section>
         <div className='container'>
           <div className='w-full lg:h-[300px] hero grid grid-cols-3 gap-4'>
             <div className='h-[300px] border border-red-500 col-span-3 lg:col-span-2'>
