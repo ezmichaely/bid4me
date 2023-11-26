@@ -3,10 +3,7 @@
 //   Shell, DatabaseZap, Truck,
 // } from 'lucide-react';
 
-// interface HeaderLink {
-//   name: string;
-//   icon: JSX.Element;
-// }
+
 
 export const colors = {
   primary: '#260B8E',

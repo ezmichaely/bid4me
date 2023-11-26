@@ -1,11 +1,12 @@
 import React from 'react'
+import { TagCard } from '@/components'
 import {
   FreeReturnIcon, OnlineSupportIcon,
   SecurePayIcon, TruckIcon, WalletIcon
 } from '@/components/icons'
-import { TagCard } from '@/components'
+import { TaglineProps } from '@/types/interface'
 
-const taglines = [
+const taglines: TaglineProps[] = [
   {
     title: "GREAT VALUE",
     icon: <WalletIcon />,
