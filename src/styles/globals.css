@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* width */
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    @apply bg-primary-400
+  }
+
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-secondary-400
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-secondary-300
+  }
+}
+
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} */
+
+*, *::after, *::before {
+  @apply box-border
+}
+
+body {
+  @apply overflow-x-hidden w-screen
+  text-accent font-inter h-screen
+  bg-whites-100
+  /* border border-red-500 */
+}
+
+main {
+  @apply max-w-screen-2xl mx-auto w-screen
+  min-h-[calc(100vh_-_138px)]
+  pt-3 px-3
+  /* border border-red-500 */
+}
+
+a, button {
+  @apply
+  /* font-medium */
+  flex justify-center items-center gap-2
+}
+
+
+.navLink {
+  @apply font-kanit font-medium
+  text-accent hover:text-accent/80 whitespace-nowrap
+}
+
+.navLink.active {
+  @apply font-kanit font-medium
+  text-primary-300 hover:text-accent/80
+}
+
+
+/* swiper */
+.swiper-pagination .swiper-pagination-bullet {
+  @apply bg-primary-400 hover:bg-primary-400/50 transition-width
+}
+
+.swiper-pagination .swiper-pagination-bullet-active {
+  @apply w-6 rounded-lg transition-width
+}
+
+
+
+/* .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
