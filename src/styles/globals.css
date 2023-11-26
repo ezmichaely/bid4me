@@ -115,8 +115,15 @@
 }
 
 main {
+  @apply w-full min-h-[calc(100vh_-_138px)]
+}
+
+section {
+  @apply w-full
+}
+
+section .container {
   @apply max-w-screen-2xl mx-auto w-screen
-  min-h-[calc(100vh_-_138px)]
   p-3
 }
 

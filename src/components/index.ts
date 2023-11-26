@@ -18,13 +18,16 @@ import BrandHeader from './common/BrandHeader'
 // import AsideNav from './common/asideNav';
 
 import HeroSwiper from './carousel/HeroSwiper';
-
+import FlashSale from './carousel/FlashSale';
 import SearchBar from './forms/SearchBar';
 import LoginForm from './forms/LoginForm';
 import SignupForm from './forms/SignupForm';
 
+import TagLines from './sections/Taglines'
+import TagCard from './cards/TagCard';
+import Countdown from './common/Countdown';
 
-
+import CategoryList from './cards/CategoryList';
 
 export {
   NextAuthProvider,
@@ -36,17 +39,15 @@ export {
 
   NotificationBell,
 
-  HeroSwiper,
+  HeroSwiper, FlashSale,
+
 
   SearchBar, LoginForm, SignupForm,
 
 
-
-
+  TagLines, TagCard,
+  CategoryList,
+  Countdown,
 
 
 }
-
-// export default {
-//   ThemeProvider
-// }

@@ -22,7 +22,7 @@ const kanit = Kanit({
   display: 'swap',
 })
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function UserLayout({ children }: { children: React.ReactNode }) {
   const htmlClass = `light ${inter.variable} ${kanit.variable}`
   // const htmlClass = `light ${interOnline.className} ${kanitOnline.className}`
 

@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form"
 import { signIn } from 'next-auth/react';
 import * as z from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { FacebookSvg, GoogleSvg } from '@/assets/icons'
+import { FacebookIcon, GoogleIcon } from '@/components/icons'
 import { Eye, EyeOff, Mail, KeySquare, } from "lucide-react";
 import styles from '@/styles/authform.module.css'
 import { Button } from "@/components/ui/button";
@@ -53,19 +53,19 @@ function LoginForm() {
 
   return (
     <div className={styles.formContainer}>
-      <h3 className={styles.formTitle}>LOGIN</h3>
+      <h3 className={styles.formTitle}>Welcome Back!</h3>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
           <div className={styles.formProviders}>
             <Button size="lg" type="button" className={styles.btnProvider}
               onClick={() => signIn('google', { callbackUrl: '/' })}>
-              <GoogleSvg size={20} />
+              <GoogleIcon size={20} />
               Continue with Google
             </Button>
 
             <Button size="lg" type="button" className={styles.btnProvider}
               onClick={() => signIn('facebook', { callbackUrl: '/' })}>
-              <FacebookSvg size={20} />
+              <FacebookIcon size={20} />
               Continue with Facebook
             </Button>
           </div>

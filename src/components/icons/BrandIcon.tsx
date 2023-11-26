@@ -1,6 +1,6 @@
 import { SvgProps } from "@/types/interface"
 
-export default function GoogleIcon({ size, fill }: SvgProps) {
+export default function BrandIcon({ size, fill }: SvgProps) {
 
   return (
     <svg width="53" height="58" viewBox="0 0 53 58" fill="none" xmlns="http://www.w3.org/2000/svg">

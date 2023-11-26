@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { colors } from '@/constants/constants';
 import { BrandName } from '@/components';
-import { BrandSvg } from '@/assets/icons';
+import { BrandIcon } from '@/components/icons';
 import { Separator } from '@/components/ui/separator';
 import { Toggle } from "@/components/ui/toggle"
 import {
@@ -57,7 +57,7 @@ export default function MobileNav() {
           <DialogHeader>
             <Link href="/" onClick={() => setIsOpen(false)}
               className="flex justify-center items-center flex-row gap-3">
-              <BrandSvg />
+              <BrandIcon />
               <BrandName size="small" />
             </Link>
           </DialogHeader>
