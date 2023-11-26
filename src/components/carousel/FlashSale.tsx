@@ -17,8 +17,10 @@ export default function FlashSale() {
       breakpoints={{
         430: { slidesPerView: 1 },
         640: { slidesPerView: 2 },
-        768: { slidesPerView: 3 },
-        1024: { slidesPerView: 4 },
+        // 768: { slidesPerView: 2 },
+        // 820: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+        1280: { slidesPerView: 4 },
       }}
       spaceBetween={16}
       // effect={'fade'}

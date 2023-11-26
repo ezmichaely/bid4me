@@ -26,7 +26,7 @@ import SignupForm from './forms/SignupForm';
 import TagLines from './sections/Taglines'
 import TagCard from './cards/TagCard';
 import Countdown from './common/Countdown';
-
+import CountdownTracker from './common/CountDownTracker'
 import CategoryList from './cards/CategoryList';
 
 export {
@@ -48,6 +48,7 @@ export {
   TagLines, TagCard,
   CategoryList,
   Countdown,
+  CountdownTracker,
 
 
 }

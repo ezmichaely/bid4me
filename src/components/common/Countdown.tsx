@@ -2,68 +2,11 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import moment from 'moment';
-import '@/styles/countdown.css'
+import { CountdownTracker } from '@/components';
+import { CountdownProps } from '@/types';
 
-function ZeroFillFilter(value: number): string {
-  return (value < 10 && value > -1 ? '0' : '') + value;
-}
 
-interface TrackerProps {
-  property: string;
-  time: Record<string, any>;
-}
-
-function Tracker({ property, time }: TrackerProps): JSX.Element {
-  const [current, setCurrent] = useState<number>(0);
-  const [previous, setPrevious] = useState<number>(0);
-  const [show, setShow] = useState<boolean>(false);
-  const elementRef = useRef<HTMLSpanElement>(null);
-
-  useEffect(() => {
-    const handleTime = (newValue: Record<string, any>): void => {
-      if (newValue[property] === undefined) {
-        setShow(false);
-        return;
-      }
-
-      let val: number = newValue[property];
-      setShow(true);
-      val = val < 0 ? 0 : val;
-
-      if (val !== current) {
-        setPrevious(current);
-        setCurrent(val);
-
-        if (elementRef.current) {
-          elementRef.current.classList.remove('flip');
-          void elementRef.current.offsetWidth;
-          elementRef.current.classList.add('flip');
-        }
-      }
-    };
-
-    time && handleTime(time);
-  }, [current, previous, property, time]);
-
-  return (
-    <span className="flip-clock__piece">
-      <span ref={elementRef} className="flip-clock__card flip-card">
-        <b className="flip-card__top">{ZeroFillFilter(current)}</b>
-        <b className="flip-card__bottom" data-value={ZeroFillFilter(current)}></b>
-        <b className="flip-card__back" data-value={ZeroFillFilter(previous)}></b>
-        <b className="flip-card__back-bottom" data-value={ZeroFillFilter(previous)}></b>
-      </span>
-      <span className="flip-clock__slot">{property}</span>
-    </span>
-  );
-}
-
-interface CountdownProps {
-  dateStart: string;
-  dateEnd: string;
-}
-
-function Countdown({ dateStart, dateEnd }: CountdownProps): JSX.Element {
+export default function Countdown({ dateStart, dateEnd }: CountdownProps): JSX.Element {
   const [time, setTime] = useState<Record<string, any>>({});
   const trackers: string[] = ['Days', 'Hours', 'Minutes', 'Seconds'];
   const frameRef = useRef<number | null>(null);
@@ -71,16 +14,11 @@ function Countdown({ dateStart, dateEnd }: CountdownProps): JSX.Element {
   let countdown: moment.Moment | undefined;
 
   useEffect(() => {
-    if (window.requestAnimationFrame) {
+    return () => {
       setCountdown(dateEnd);
       update();
-    }
-
-    return () => {
-      if (window.cancelAnimationFrame && frameRef.current) {
-        cancelAnimationFrame(frameRef.current);
-      }
     };
+
   }, [dateEnd]);
 
   const setCountdown = (newDate: string): void => {
@@ -118,12 +56,10 @@ function Countdown({ dateStart, dateEnd }: CountdownProps): JSX.Element {
   };
 
   return (
-    <div className="flip-clock" data-date={dateStart} onClick={update}>
+    <div className="timerClock" data-date={dateStart} onClick={update}>
       {trackers.map((tracker) => (
-        <Tracker key={tracker} property={tracker} time={time} />
+        <CountdownTracker key={tracker} property={tracker} time={time} />
       ))}
     </div>
   );
 }
-
-export default Countdown;

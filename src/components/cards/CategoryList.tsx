@@ -10,7 +10,7 @@ export default function CategoryList() {
       <div className="w-full text-left">
         {mainCategory.map((item, index) => (
           <Link key={index} href={`${item.link}/${item.params}`}
-            className="py-2 hover:bg-primary font-medium text-left">
+            className="py-2 hover:bg-primary dark:hover:text-accent-foreground dark:hover:font-bold font-medium text-left">
             {item.name}
           </Link>
         ))}

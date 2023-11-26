@@ -153,6 +153,27 @@ a, button {
   hover:text-foreground/80 dark:hover:text-background/80
 }
 
+
+/* timer */
+.timerClock {
+  @apply flex justify-start items-center gap-2
+  text-center
+}
+
+.timer {
+  @apply w-9 bg-primary
+}
+
+.timer h6 {
+  @apply font-kanit text-lg font-semibold tracking-wider
+  text-accent dark:text-accent-foreground
+}
+
+.timerClock .colon:last-child  {
+  @apply hidden
+}
+
+
 /* swiper */
 .swiper-pagination .swiper-pagination-bullet {
   @apply bg-secondary hover:bg-secondary/80

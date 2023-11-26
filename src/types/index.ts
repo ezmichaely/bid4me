@@ -17,3 +17,11 @@ export interface SvgProps {
 //   icon?: keyof typeof Icons
 // }
 
+export interface CountdownProps {
+  dateStart: string;
+  dateEnd: string;
+}
+export interface TrackerProps {
+  property: string;
+  time: Record<string, any>;
+}

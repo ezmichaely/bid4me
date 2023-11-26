@@ -41,9 +41,9 @@ export default function HomePage() {
             </div>
             <div className='col-span-4 lg:col-span-3'>
               <div className='h-full flex justify-start items-start gap-3 flex-col w-full'>
-                <div className='flex gap-3 items-center'>
+                <div className='flex gap-x-8 items-center'>
                   <div className='flex gap-3'>
-                    <Zap fill={colors.secondary} />
+                    <Zap />
                     <h3 className='font-bold'>FLASH SALES</h3>
                   </div>
                   <div className='flex'>
