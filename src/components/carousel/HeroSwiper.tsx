@@ -7,17 +7,13 @@ import { EffectFade, Pagination, Autoplay } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
+import Image from 'next/image';
 // import 'swiper/css/navigation';
 
+import { i1, i2, i3, i4 } from '@/assets/images'
+
+
 export default function HeroSwiper() {
-
-  const progressCircle = useRef(null);
-  const progressContent = useRef(null);
-  // const onAutoplayTimeLeft = (s, time, progress) => {
-  //   progressCircle.current.style.setProperty('--progress', 1 - progress);
-  //   progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
-  // };
-
 
   return (
     <Swiper
@@ -40,15 +36,30 @@ export default function HeroSwiper() {
       className="h-full"
     // onAutoplayTimeLeft={onAutoplayTimeLeft}
     >
-      <SwiperSlide className='bg-red-500'>Slide 1</SwiperSlide>
-      <SwiperSlide className='bg-purple-500'>Slide 2</SwiperSlide>
-      <SwiperSlide className='bg-yellow-500'>Slide 3</SwiperSlide>
-      <SwiperSlide className='bg-lime-500'>Slide 4</SwiperSlide>
+      <SwiperSlide style={{ backgroundImage: `url(${i1.src})` }}>
+        <div className='w-full h-full flex justify-center items-center backdrop-blur-md'>
+          <Image src={i1} alt="01" className='drop-shadow-xl' />
+        </div>
+      </SwiperSlide>
+      <SwiperSlide style={{ backgroundImage: `url(${i2.src})` }}>
+        <div className={`w-full h-full flex justify-center items-center backdrop-blur-md`}>
+          <Image src={i2} alt="01" className='drop-shadow-xl' />
+        </div>
+      </SwiperSlide>
       <SwiperSlide className='bg-orange-500'>Slide 5</SwiperSlide>
+
+      <SwiperSlide style={{ backgroundImage: `url(${i3.src})` }}>
+        <div className={`w-full h-full flex justify-center items-center backdrop-blur-md`}>
+          <Image src={i3} alt="01" className='drop-shadow-xl' />
+        </div>
+      </SwiperSlide>
+      <SwiperSlide style={{ backgroundImage: `url(${i4.src})` }}>
+        <div className={`w-full h-full flex justify-center items-center backdrop-blur-md`}>
+          <Image src={i4} alt="01" className='drop-shadow-xl' />
+        </div>
+      </SwiperSlide>
+
       <SwiperSlide className='bg-blue-500'>Slide 6</SwiperSlide>
-      <SwiperSlide className='bg-gray-500'>Slide 7</SwiperSlide>
-      <SwiperSlide className='bg-green-500'>Slide 8</SwiperSlide>
-      <SwiperSlide className='bg-violet-500'>Slide 9</SwiperSlide>
     </Swiper>
   )
 }

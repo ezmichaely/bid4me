@@ -119,7 +119,8 @@ main {
 }
 
 section {
-  @apply w-full border border-red-500
+  @apply w-full
+  /* border border-red-500 */
 }
 
 section .container {
