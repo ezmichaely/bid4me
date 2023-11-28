@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+<<<<<<< Updated upstream
 
 @layer base {
   /* width */
@@ -107,3 +108,5 @@ a, button {
   height: 100%;
   object-fit: cover;
 } */
+=======
+>>>>>>> Stashed changes

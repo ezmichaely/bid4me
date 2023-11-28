@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import Providers from './common/Providers';
 import BrandName from './common/brand/BrandName';
 import Header from './common/Header';
@@ -34,4 +35,12 @@ export {
 
 
 
+=======
+import Providers from "./element/Providers";
+import ThemeSwitcher from "./element/ThemeSwitcher";
+
+export {
+  Providers,
+  ThemeSwitcher,
+>>>>>>> Stashed changes
 }

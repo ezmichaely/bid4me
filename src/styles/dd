@@ -1,0 +1,155 @@
+
+/* bid4me theme */
+@layer base {
+  :root {
+    --background: 210 33.3% 97.6%;  /* whitish */
+    --foreground: 222.2 47.4% 11.2%;  /* slate */
+
+    --card: 210 33.3% 97.6%; /* whitish */
+    --card-foreground: 222.2 47.4% 11.2%;  /* slate */
+
+    --popover: 210 33.3% 97.6%; /* whitish */
+    --popover-foreground: 222.2 47.4% 11.2%;  /* slate */
+
+    --primary: 45 100% 54%; /* yellow */
+    --primary-foreground: 222.2 47.4% 11.2%; /* slate */
+
+    --secondary: 252.4 85.6% 30%; /* violet */
+    --secondary-foreground: 210 33.3% 97.6%; /* whitish */
+
+    --muted: 214.7 65.5% 94.3%; /* whitish-400 */
+    --muted-foreground: 210 33.3% 97.6%;  /* whitish */
+
+    --accent: 222.2 47.4% 11.2%; /* slate */
+    --accent-foreground: 210 33.3% 97.6%;  /* whitish */
+
+    --destructive: 346.8 77.2% 49.8%; /* rose */
+    --destructive-foreground: 210 33.3% 97.6%;  /* whitish */
+
+    --warning: 24.6 95% 53.1%; /* orange */
+    --warning-foreground: 222.2 47.4% 11.2%;  /* slate */
+
+    --success: 142.1 76.2% 36.3%; /* green */
+    --success-foreground: 210 33.3% 97.6%;  /* whitish */
+
+    --border: 252.4 85.6% 30% /* violet */
+    --input: 252.4 85.6% 30% /* violet */
+    --ring: 45 100% 54%; /* yellow */
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222.2 47.4% 11.2%;  /* slate */
+    --foreground: 210 33.3% 97.6%;  /* whitish */
+
+    --card: 222.2 47.4% 11.2%;  /* slate */
+    --card-foreground: 210 33.3% 97.6%;  /* whitish */
+
+    --popover: 222.2 47.4% 11.2%;  /* slate */
+    --popover-foreground: 210 33.3% 97.6%;  /* whitish */
+
+    --primary: 45 100% 54%; /* yellow */
+    --primary-foreground: 222.2 47.4% 11.2%; /* slate */
+
+    --secondary: 252.4 85.6% 30%; /* violet */
+    --secondary-foreground: 210 33.3% 97.6%; /* whitish */
+
+    --muted: 214.7 65.5% 94.3%; /* whitish-400 */
+    --muted-foreground: 210 33.3% 97.6%;  /* whitish */
+
+
+
+    --accent: 210 33.3% 97.6%;  /* whitish */
+    --accent-foreground: 222.2 47.4% 11.2%; /* slate */
+
+    --destructive: 346.8 77.2% 49.8%; /* rose */
+    --destructive-foreground: 210 33.3% 97.6%;  /* whitish */
+
+    --warning: 24.6 95% 53.1%; /* orange */
+    --warning-foreground: 222.2 47.4% 11.2%;  /* slate */
+
+    --success: 142.1 76.2% 36.3%; /* green */
+    --success-foreground: 210 33.3% 97.6%;  /* whitish */
+
+    --border: 45 100% 54%; /* yellow */
+    --input: 45 100% 54%; /* yellow */
+    --ring: 45 100% 54%; /* yellow */
+
+    --ring: 35.5 91.7% 32.9%;
+  }
+}
+
+@layer base {
+  *, *::before, *::after {
+    @apply box-border
+  }
+
+  body {
+    @apply bg-background text-foreground p-0 m-0
+    overflow-x-hidden w-screen font-inter h-screen
+  }
+
+  /* scrollbar */
+  /* width */
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    @apply bg-secondary-400
+  }
+
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-400
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-300
+  }
+}
+
+main {
+  @apply max-w-screen-2xl mx-auto w-screen
+  min-h-[calc(100vh_-_138px)]
+  p-3
+}
+
+a, button {
+  @apply flex justify-center items-center gap-2
+}
+
+/*
+.navLink {
+  @apply font-kanit font-medium
+  text-accent hover:text-accent/80 whitespace-nowrap
+}
+
+.navLink.active {
+  @apply font-kanit font-medium
+  text-secondary dark:text-primary hover:text-accent/80
+}
+
+.notheme {
+  @apply text-foreground dark:text-background
+  hover:text-foreground/80 dark:hover:text-background/80
+}
+
+.notheme.active {
+  @apply font-kanit font-medium
+  text-secondary dark:text-secondary
+  hover:text-foreground/80 dark:hover:text-background/80
+} */
+
+/* swiper */
+/* .swiper-pagination .swiper-pagination-bullet {
+  @apply bg-secondary hover:bg-secondary/80
+}
+
+.swiper-pagination .swiper-pagination-bullet-active {
+  @apply w-6 rounded-lg
+} */
