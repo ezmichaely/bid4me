@@ -3,14 +3,9 @@
 import Link from "next/link";
 import { useState } from "react";
 import { signIn } from 'next-auth/react';
-<<<<<<< Updated upstream:src/components/forms/LoginForm.tsx
 import { FacebookSvg, GoogleSvg, CheckBoxSvg } from '@/assets/icons'
 import { colors } from "@/lib/constants";
 import { Input, Checkbox, Button } from "@nextui-org/react";
-=======
-import { Button } from "@/components/ui/button"
-import { FacebookSvg, GoogleSvg } from '@/components/svg'
->>>>>>> Stashed changes:src/components0/forms/LoginForm.tsx
 import { AtSign, KeyRound, Eye, EyeOff, Check } from "lucide-react";
 import styles from '@/styles/authform.module.css'
 

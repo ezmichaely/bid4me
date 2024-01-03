@@ -1,12 +1,11 @@
 import { nextui } from "@nextui-org/react";
 import type { Config } from 'tailwindcss'
-import { nextui } from "@nextui-org/react";
+
 
 const config: Config = {
   content: [
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-<<<<<<< Updated upstream
     './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
@@ -44,15 +43,6 @@ const config: Config = {
           300: '#E7EFFA',
           400: '#D9D9D9'
         }
-=======
-    './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}'
-  ],
-  theme: {
-    extend: {
-      fontFamily: {
-        inter: ['var(--font-inter)'],
-        kanit: ['var(--font-kanit)'],
->>>>>>> Stashed changes
       },
     },
   },
@@ -63,7 +53,6 @@ const config: Config = {
     defaultTheme: "light",
     defaultExtendTheme: "light",
     themes: {
-<<<<<<< Updated upstream
       mamba: {
         colors: {
           primary: {
@@ -86,21 +75,11 @@ const config: Config = {
             DEFAULT: '#FFC614',
             foreground: '#0F172A'
           },
-=======
-      light: {
-        colors: {
-          primary: {
-            DEFAULT: "#BEF264",
-            foreground: "#000000",
-          },
-          focus: "#BEF264",
->>>>>>> Stashed changes
         },
       },
       dark: {
         colors: {
           primary: {
-<<<<<<< Updated upstream
             DEFAULT: '#260B8E',
             foreground: '#ffffff'
           },
@@ -112,15 +91,5 @@ const config: Config = {
       },
     }
   })],
-=======
-            DEFAULT: "#BEF264",
-            foreground: "#000000",
-          },
-          focus: "#BEF264",
-        },
-      },
-    },
-  })]
->>>>>>> Stashed changes
 }
 export default config
